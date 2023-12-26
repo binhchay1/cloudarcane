@@ -46,7 +46,7 @@ get_header();
 				</div>
 			</div>
 
-			<form id="items-search-form" class="navbar-form" action="/search" accept-charset="UTF-8" method="post">
+			<form id="items-search-form" class="navbar-form" action="search" accept-charset="UTF-8" method="post">
 				<input type="text" name="q" id="q" placeholder="Tìm kiếm trò chơi" class="form-control query fake-button" required="required" />
 				<button type="submit" aria-label="Search">
 					<i class="y-icon y-icon--search"></i>
@@ -134,67 +134,6 @@ get_header();
 				<div class="popular-newest-games-links">
 					<a class="games-link new-game fake-button" title="Các trò chơi Trực tuyến Miễn phí tại <?php echo get_bloginfo() ?>" href="/news-game">Game Mới</a>
 					<a class="games-link pop-game fake-button" title="Các trò chơi Trực tuyến Miễn phí tại <?php echo get_bloginfo() ?>" href="/best-game">Game Phổ Biến</a>
-				</div>
-
-				<div class="top-categories-mobile">
-					<div class="title">
-						Các loại game
-					</div>
-					<div class="row">
-						<ul>
-							@foreach($listCategory as $category)
-							@if(session('locale') == 'vi')
-							<li class="inactive {{ $category['name'] }} li-category" style="margin: 0 4px 20px !important;">
-								<a class="{{ $category['name'] }}" title="{{ $category['title'] }}" href="{{ route('category', ['category' => $category['name']]) }}">
-									@if(session('locale') == 'vi')
-									<span class="name">{{ \App\Enums\TransVietnamese::CATEGORY_VIETNAMESE[ucfirst($category['name'])] }}</span>
-									@else
-									<span class="name">{{ __(ucfirst($category['name'])) }}</span>
-									@endif
-									<span class="number">{{ $category['games_count'] }} game</span>
-								</a>
-							</li>
-							@else
-							<li class="inactive {{ $category['name'] }} li-category" style="margin: 0 5px 20px !important;">
-								<a class="{{ $category['name'] }}" title="{{ $category['title'] }}" href="{{ route('category', ['category' => $category['name']]) }}">
-									@if(session('locale') == 'vi')
-									<span class="name">{{ \App\Enums\TransVietnamese::CATEGORY_VIETNAMESE[ucfirst($category['name'])] }}</span>
-									@else
-									<span class="name">{{ __(ucfirst($category['name'])) }}</span>
-									@endif
-									<span class="number">{{ $category['games_count'] }} game</span>
-								</a>
-							</li>
-							@endif
-							@endforeach
-						</ul>
-					</div>
-				</div>
-
-				<div class="top-tags-mobile">
-					<div class="title">
-						Thẻ
-					</div>
-					<div class="top-tags-mobile__wrapper">
-						<div class="row top-tags__height">
-							<ul id="list-tag-mobile">
-								@foreach($listTag as $tag => $value)
-								<li style="margin-top: 5px;">
-									<a class="tag" href="{{ route('tags', ['tag' => $tag]) }}">
-										<div class="tag_slug">
-											<span style="color: <?php echo ($value['color']) ?>; font-weight: bold;">{{ $value['trans'] }}</span>
-											<span style="font-size:13px;">{{ $value['count'] }}</span>
-										</div>
-									</a>
-								</li>
-								@endforeach
-								<li class="more-tags">
-									<a class="tag all-tags top" href="/list-tag">Tất cả các thẻ
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</div>
 			</div>
 

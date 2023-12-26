@@ -4,8 +4,11 @@
         "btns",
         "bypostauthor",
         "cărțile",
+        "cpage",
         "customizer",
         "dealerdirect",
+        "dirlist",
+        "fullscreeniframe",
         "Gamekafe",
         "idnet",
         "iframes",
@@ -23,6 +26,7 @@
         "Toate",
         "videobox",
         "wpcs",
+        "wpdb",
         "wpthemereview",
         "wptrt"
     ]

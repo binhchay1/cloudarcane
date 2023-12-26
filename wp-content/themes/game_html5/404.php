@@ -1,60 +1,40 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package game_html5
- */
+<!DOCTYPE html>
+<html lang="en">
 
-get_header();
-?>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<title>Không tìm thấy</title>
 
-	<main id="primary" class="site-main">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/error.css' ?>">
+</head>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'game_html5' ); ?></h1>
-			</header><!-- .page-header -->
+<body class="bg-purple">
+	<div class="stars">
+		<div class="central-body">
+			<h1 class="code-error">404</h1>
+			<h1>Địa chỉ đường dẫn của bạn không tồn tại hoặc không tìm thấy. Vui lòng ấn vào nút bên dưới để quay lại trang chủ</h1>
+			<a href="{{ route('home') }}" class="btn-go-home">Về trang chủ</a>
+		</div>
+		<div class="objects">
+			<img class="object_rocket" src="<?php echo get_template_directory_uri() . '/svg/rocket.svg' ?>" width="40px">
+			<div class="earth-moon">
+				<img class="object_earth" src="<?php echo get_template_directory_uri() . '/svg/earth.svg' ?>}" width="100px">
+				<img class="object_moon" src="<?php echo get_template_directory_uri() . '/svg/moon.svg' ?>" width="80px">
+			</div>
+			<div class="box_astronaut">
+				<img class="object_astronaut" src="<?php echo get_template_directory_uri() . '/svg/astronaut.svg' ?>" width="140px">
+			</div>
+		</div>
+		<div class="glowing_stars">
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+			<div class="star"></div>
+		</div>
+	</div>
+</body>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'game_html5' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'game_html5' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$game_html5_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'game_html5' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$game_html5_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+</html>

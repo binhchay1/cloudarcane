@@ -13,6 +13,28 @@ if (!defined('_S_VERSION')) {
 	define('_S_VERSION', '1.0.0');
 }
 
+// add_action('init', function ($search) {
+// 	add_rewrite_rule('search/?$', 'index.php?s=' . $search, 'top');
+// });
+
+function game_html5_rewrite_rule()
+{
+	add_rewrite_rule(
+		'^games/([^/]*)/?',
+		'index.php?name=1-2-3',
+		'top'
+	);
+}
+add_action('init', 'game_html5_rewrite_rule');
+
+function game_html5_get_param()
+{
+	if (false !== get_query_var('name')) {
+		$_GET['name'] = get_query_var('name');
+	}
+}
+add_action('parse_query', 'game_html5_get_param');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *

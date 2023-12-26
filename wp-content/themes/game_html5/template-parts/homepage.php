@@ -1,9 +1,21 @@
 <?php
-$path = home_url() . '/modobom';
+global $wpdb;
 
-var_dump($path);
+// $sql = "SELECT * FROM wp_games WHERE thumb IS NOT NULL";
+// $games = $wpdb->get_results($sql);
+
+$items_per_page = 30;
+$table_name = $wpdb->prefix . "games";
+$page = isset($_GET['cpage']) ? abs((int) $_GET['cpage']) : 1;
+$offset = ($page * $items_per_page) - $items_per_page;
+
+$query = 'SELECT * FROM ' . $table_name . ' WHERE thumb IS NOT NULL';
+
+$total_query = "SELECT COUNT(1) FROM (${query}) AS combined_table";
+$total = $wpdb->get_var($total_query);
+
+$games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', ' . $items_per_page, OBJECT);
 ?>
-
 
 <style type="text/css">
     .top-tags ul li {
@@ -28,7 +40,7 @@ var_dump($path);
                     <ul>
                         @foreach($search as $keyword)
                         <li style="display: inline-block;">
-                            <form action="/search" accept-charset="UTF-8" method="post">
+                            <form action="search" accept-charset="UTF-8" method="post">
                                 @csrf
                                 <input type="hidden" name="q" id="q" value="{{ $keyword['keyword'] }}" required="required" />
                                 <button class="btn" type="submit" aria-label="Search" style="border-radius: 10px; padding: 1px 5px;">
@@ -61,45 +73,42 @@ var_dump($path);
     <div class="box items-grid no-background">
         <div class="row">
             <div class="item-title-container col-md-12">
-                <h3 class="home-title">Trò chơi (<?php $countGame = 0 ?>)
+                <h3 class="home-title">Trò chơi (<?php echo $total ?>)
                 </h3>
             </div>
         </div>
         <div class="items-container" id="items_container">
             <?php foreach ($games as $game) { ?>
                 <div class="item thumb videobox grid-column">
-                    <a title="Trò chơi <?php $game['name'] ?> - Chơi trực tuyến tại <?php echo get_bloginfo() ?>" href="">
+
+                    <a title="Trò chơi <?php echo $game->name ?> - Chơi trực tuyến tại <?php echo get_bloginfo() ?>" href="<?php echo get_template_directory_uri() . '/template-parts/game.php?name=' . $game->name ?>">
                         <div class="item__thumbarea">
                             <div class="item__microthumb"></div>
                             <div class="item__img-container">
-                                <img class="thumb lazy playable" alt="<?php $game['name'] ?> - <?php ucfirst($game['category']) ?> - Gamekafe" src="<?php $game['thumbs'] ?>" />
+                                <img class="thumb lazy playable" alt="<?php echo $game->name ?>" src="<?php echo $game->thumb ?>" />
                             </div>
                         </div>
                         <div class="item__infos">
-                            <h4 class="item__title ltr"><?php $game['name'] ?></h4>
+                            <h4 class="item__title ltr"><?php echo ucfirst(str_replace("-", " ", $game->name)); ?></h4>
                             <p class="item__title ltr">Modobom</p>
-                            <p class="item__rating">
-                                <?php if ($game['rating'] > 50) { ?>
-                                    <span class="item__success">
-                                        <?php $game['rating'] ?>%
-                                    </span>
-                                <?php } else { ?>
-                                    <span class="item__fail">
-                                        <?php $game['rating'] ?>%
-                                    </span>
-                                <?php } ?>
-                            </p>
-                            <p class="item__plays-count"><?php $game['count_play'] ?> chơi
-                            </p>
                         </div>
                     </a>
                 </div>
             <?php } ?>
         </div>
         <div class="navigator mobile">
-
+            <?php
+            echo paginate_links(array(
+                'base' => add_query_arg('cpage', '%#%'),
+                'format' => '',
+                'prev_text' => __('&laquo;'),
+                'next_text' => __('&raquo;'),
+                'total' => ceil($total / $items_per_page),
+                'current' => $page
+            ));
+            ?>
         </div>
     </div>
     <h1>Các trò chơi Trực tuyến Miễn phí tại <a href="/"><?php echo get_bloginfo() ?></a></h1>
-    <h2>Chơi trò chơi miễn phí trên Gamekafe. Các game hai người chơi và game trang điểm hàng đầu. Tuy nhiên, game mô phỏng và game nấu ăn cũng rất phổ biến trong các người chơi. Gamekafe cũng hoạt động trên các thiết bị di động và có nhiều game cảm ứng cho điện thoại. Ghé thăm Gamekafe và gia nhập với cộng đồng người chơi ngay.</h2>
+    <h2>Chơi trò chơi miễn phí trên <?php echo get_bloginfo() ?>. Các game hai người chơi và game trang điểm hàng đầu. Tuy nhiên, game mô phỏng và game nấu ăn cũng rất phổ biến trong các người chơi. Gamekafe cũng hoạt động trên các thiết bị di động và có nhiều game cảm ứng cho điện thoại. Ghé thăm Gamekafe và gia nhập với cộng đồng người chơi ngay.</h2>
 </div>
