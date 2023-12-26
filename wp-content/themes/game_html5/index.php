@@ -200,44 +200,29 @@ get_header();
 
 			<div id="locale-selector-dropdown" class="locale-selector-dropdown fake-button">
 				<div id="button-flag" onclick="dropDownLocate()">
-					<img src="" class="image-flag" alt="Ngôn ngữ mặc định">
+					<img src="<?php echo get_template_directory_uri() . '/svg/flag/ro.svg' ?>" class="image-flag" alt="Ngôn ngữ mặc định">
 				</div>
 
 				<div id="locate-dropdown">
-					<ul>
-						<li>
-							<a aria-label="Lựa chọn ngôn ngữ" href="{{ route('app.setLocale', ['locale' => 'vi']) }}" id="locale-vi">
-								<img src="{{ asset('svg/flag/vn.svg" class="image-flag mt-3">
-								</a>
-							</li>
-							<li>
-								<a aria-label="Lựa chọn ngôn ngữ" href="{{ route('app.setLocale', ['locale' => 'en']) }}" id="locale-en">
-								<img src="{{ asset('svg/flag/gb.svg" class="image-flag mt-3">
-								</a>
-							</li>
-							<li>
-								<a aria-label="Lựa chọn ngôn ngữ" href="{{ route('app.setLocale', ['locale' => 'hr']) }}" id="locale-hr">
-								<img src="{{ asset('svg/flag/hr.svg" class="image-flag mt-3">
-								</a>
-							</li>
-							<li>
-								<a aria-label="Lựa chọn ngôn ngữ" href="{{ route('app.setLocale', ['locale' => 'th']) }}" id="locale-th">
-								<img src="{{ asset('svg/flag/th.svg" class="image-flag mt-3">
-								</a>
-							</li>
-							<li>
-								<a aria-label="Lựa chọn ngôn ngữ" href="{{ route('app.setLocale', ['locale' => 'ro']) }}" id="locale-ro">
-								<img src="{{ asset('svg/flag/ro.svg" class="image-flag mt-3">
-								</a>
-							</li>
-						</ul>
-					</div>
+
 				</div>
+			</div>
 			</div>
 		</div>
 	</nav>
 	<div class="container">
-		@yield('content')
+		<?php if (is_front_page() && is_home()) { ?>
+			<?php get_template_part('template-parts/homepage', 'heading'); ?>
+		<?php } else { ?>
+			<div class="category_menu">
+				<nav class="cat_menu">
+					<div class="menu_title parent_cat_name">
+						<h6><?php echo $category->name; ?></h6>
+					</div>
+					<?php rs_left_menu_subcats($subcategories); ?>
+				</nav>
+			</div>
+		<?php } ?>
 	</div>
 	<?php get_footer() ?>
 	<div class="dark-overlay"></div>
@@ -256,11 +241,9 @@ get_header();
 		</div>
 	</div>
 
-	<script src="{{ asset('js/plugins/jquery/jquery.min.js"></script>
-	<script src="{{ asset('js/page/main.js"></script>
-	<script src="{{ asset('js/admin/user.js"></script>
+	<script src="js/plugins/jquery/jquery.min.js"></script>
+	<script src="js/page/main.js"></script>
+	<script src="js/admin/user.js"></script>
 </body>
 
 <?php
-
-get_footer();
