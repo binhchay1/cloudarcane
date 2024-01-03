@@ -1,9 +1,6 @@
 <?php
 global $wpdb;
 
-// $sql = "SELECT * FROM wp_games WHERE thumb IS NOT NULL";
-// $games = $wpdb->get_results($sql);
-
 $items_per_page = 30;
 $table_name = $wpdb->prefix . "games";
 $page = isset($_GET['cpage']) ? abs((int) $_GET['cpage']) : 1;
@@ -38,17 +35,7 @@ $games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', 
                 </div>
                 <div class="search-trends">
                     <ul>
-                        @foreach($search as $keyword)
-                        <li style="display: inline-block;">
-                            <form action="search" accept-charset="UTF-8" method="post">
-                                @csrf
-                                <input type="hidden" name="q" id="q" value="{{ $keyword['keyword'] }}" required="required" />
-                                <button class="btn" type="submit" aria-label="Search" style="border-radius: 10px; padding: 1px 5px;">
-                                    {{ $keyword['keyword'] }}
-                                </button>
-                            </form>
-                        </li>
-                        @endforeach
+
                     </ul>
                 </div>
             </div>
@@ -73,7 +60,7 @@ $games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', 
     <div class="box items-grid no-background">
         <div class="row">
             <div class="item-title-container col-md-12">
-                <h3 class="home-title">Trò chơi (<?php echo $total ?>)
+                <h3 class="home-title">Joc (<?php echo $total ?>)
                 </h3>
             </div>
         </div>
@@ -81,7 +68,7 @@ $games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', 
             <?php foreach ($games as $game) { ?>
                 <div class="item thumb videobox grid-column">
 
-                    <a title="Trò chơi <?php echo $game->name ?> - Chơi trực tuyến tại <?php echo get_bloginfo() ?>" href="<?php echo get_template_directory_uri() . '/template-parts/game.php?name=' . $game->name ?>">
+                    <a title="Joc <?php echo $game->name ?> - Joacă online la <?php echo get_bloginfo() ?>" href="<?php echo get_template_directory_uri() . '/template-parts/game.php?name=' . $game->name ?>">
                         <div class="item__thumbarea">
                             <div class="item__microthumb"></div>
                             <div class="item__img-container">
@@ -109,6 +96,6 @@ $games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', 
             ?>
         </div>
     </div>
-    <h1>Các trò chơi Trực tuyến Miễn phí tại <a href="/"><?php echo get_bloginfo() ?></a></h1>
-    <h2>Chơi trò chơi miễn phí trên <?php echo get_bloginfo() ?>. Các game hai người chơi và game trang điểm hàng đầu. Tuy nhiên, game mô phỏng và game nấu ăn cũng rất phổ biến trong các người chơi. Gamekafe cũng hoạt động trên các thiết bị di động và có nhiều game cảm ứng cho điện thoại. Ghé thăm Gamekafe và gia nhập với cộng đồng người chơi ngay.</h2>
+    <h1>Jocuri online gratuite la <a href="/"><?php echo get_bloginfo() ?></a></h1>
+    <h2>Joacă jocuri gratuite pe <?php echo get_bloginfo() ?>. Cele mai bune jocuri pentru doi jucători și jocuri de machiaj. Cu toate acestea, jocurile de simulare și jocurile de gătit sunt, de asemenea, foarte populare printre jucători. Toponeapk funcționează și pe dispozitive mobile și are multe jocuri tactile pentru telefoane. Vizitați Gamekafe și alăturați-vă comunității de jucători acum.</h2>
 </div>

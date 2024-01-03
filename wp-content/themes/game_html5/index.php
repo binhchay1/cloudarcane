@@ -1,18 +1,5 @@
 <?php
 
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package game_html5
- */
-
 get_header();
 ?>
 
@@ -33,7 +20,7 @@ get_header();
 				</div>
 				<div class="mobile-search-user-container">
 					<div class="search-btn" id="mobile-search-icon">
-						<img width="28" height="28" alt="Tìm kiếm trò chơi" src="<?php echo get_template_directory_uri() . '/svg/search.svg' ?>" />
+						<img width="28" height="28" alt="Caută jocuri" src="<?php echo get_template_directory_uri() . '/svg/search.svg' ?>" />
 					</div>
 					<div class="profile-btn">
 						<?php if (is_user_logged_in()) { ?>
@@ -47,7 +34,7 @@ get_header();
 			</div>
 
 			<form id="items-search-form" class="navbar-form" action="search" accept-charset="UTF-8" method="post">
-				<input type="text" name="q" id="q" placeholder="Tìm kiếm trò chơi" class="form-control query fake-button" required="required" />
+				<input type="text" name="q" id="q" placeholder="Caută jocuri" class="form-control query fake-button" required="required" />
 				<button type="submit" aria-label="Search">
 					<i class="y-icon y-icon--search"></i>
 				</button>
@@ -57,99 +44,38 @@ get_header();
 			<div class="y8-navbar-right">
 				<a style="text-decoration: none;" href="/news-game">
 					<div class="fake-button js-top-menu two-lines btn-header-actions new-games">
-						Game Mới
+						Joc nou
 						<span class="sub-title">
-							trong tháng
+							in luna
 						</span>
 					</div>
 				</a>
 
 				<a style="text-decoration: none;" href="/best-game">
 					<div class="fake-button js-top-menu two-lines btn-header-actions browse">
-						Game Phổ Biến
-						<span class="sub-title">được quan tâm
+						Jocuri populare
+						<span class="sub-title">sunt ingrijorati
 						</span>
 						<div class="with-notification"></div>
 					</div>
 				</a>
 
-				<div class="waiting-idnet">
-					<?php if (is_user_logged_in()) { ?>
-						<div id="user_not_logged_in" style="justify-content: space-evenly !important">
-							<a href="/register">
-								<button type="button" class="fake-button fake-button-red idnet-fast-register-link">Đăng ký
-								</button>
-							</a>
-							<a href="/login">
-								<button type="button" class="fake-button idnet-fast-login-link">Đăng nhập
-								</button>
-							</a>
-						</div>
-					<?php } else { ?>
-						<div id="user_logged_in">
-							<div class="fake-button js-top-menu user-toggle" data-menu="account">
-								<img src="<?php echo get_avatar_url(get_current_user_id()); ?>" class="avatar" alt="avatar">
-							</div>
-							<div class="links-container-container">
-								<div class="links-container sub-menu">
-									<div class="sub-menu-header">
-										<span class="username username_box"><?php echo wp_get_current_user()->display_name ?></span>
-									</div>
-									<ul>
-										<li>
-											<a class=" account-menu-link" id="account-menu-link-profile" href="/user-info/">Hồ sơ</a>
-										</li>
-										<li>
-											<a class="account-menu-link" id="account-menu-link-profile" href="/user-profile">Thay đổi hồ sơ</a>
-										</li>
-										<li>
-											<a class="account-menu-link" id="account-menu-link-games" href="/user-favorite">
-												Yêu thích
-												(<span class="js-favorites-count"><?php echo $listFavorite ?></span>)
-											</a>
-										</li>
-										<li>
-											<a class=" account-menu-link" id="account-menu-link-visited" href="/game-played">
-												Trò đã chơi
-											</a>
-										</li>
-									</ul>
-									<div class="sub-menu-footer">
-										<ul>
-											<li>
-												<form method="POST" action="/logout">
-													@csrf
-													<a onclick="this.closest('form').submit();return false;" class="account-menu-link logout">Đăng xuất</a>
-												</form>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-				</div>
-			<?php } ?>
-
-			<div class="mobile-header-block">
-				<div class="popular-newest-games-links">
-					<a class="games-link new-game fake-button" title="Các trò chơi Trực tuyến Miễn phí tại <?php echo get_bloginfo() ?>" href="/news-game">Game Mới</a>
-					<a class="games-link pop-game fake-button" title="Các trò chơi Trực tuyến Miễn phí tại <?php echo get_bloginfo() ?>" href="/best-game">Game Phổ Biến</a>
-				</div>
-			</div>
-
-			<div id="locale-selector-dropdown" class="locale-selector-dropdown fake-button">
-				<div id="button-flag" onclick="dropDownLocate()">
-					<img src="<?php echo get_template_directory_uri() . '/svg/flag/ro.svg' ?>" class="image-flag" alt="Ngôn ngữ mặc định">
+				<div class="mobile-header-block">
+					<div class="popular-newest-games-links">
+						<a class="games-link new-game fake-button" title="Jocuri online gratuite la <?php echo get_bloginfo() ?>" href="/news-game">Joc nou</a>
+						<a class="games-link pop-game fake-button" title="Jocuri online gratuite la <?php echo get_bloginfo() ?>" href="/best-game">Jocuri populare</a>
+					</div>
 				</div>
 
-				<div id="locate-dropdown">
-
+				<div id="locale-selector-dropdown" class="locale-selector-dropdown fake-button">
+					<div id="button-flag" onclick="dropDownLocate()">
+						<img src="<?php echo get_template_directory_uri() . '/svg/flag/ro.svg' ?>" class="image-flag" alt="Ngôn ngữ mặc định">
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container" style="margin-top: 30px;">
 		<?php if (is_front_page() && is_home()) { ?>
 			<?php get_template_part('template-parts/homepage', 'heading'); ?>
 		<?php } else { ?>
@@ -171,11 +97,11 @@ get_header();
 				<img width="59" height="27" alt="Gamekafe" src="<?php echo get_template_directory_uri() . '/images/black-logo-no-background.png' ?>" />
 			</div>
 			<div class="content">
-				Chúng tôi sử dụng cookie để đề xuất nội dung và phân tích lưu lượng truy cập và quảng cáo. Khi sử dụng trang web này, bạn đồng ý với <a target="_blank" rel="nofollow" href="{{ route('privacy">Chính sách bảo mật</a>
-				và <a target="_blank" rel="nofollow" href="{{ route('cookie.policy">Chính sách Cookie</a>
+				Folosim cookie-uri pentru a recomanda conținut și pentru a analiza traficul și publicitatea. Prin utilizarea acestui site, sunteți de acord cu <a target="_blank" rel="nofollow" href="/privacy">Politica de confidențialitate</a>
+				și <a target="_blank" rel="nofollow" href="/cookie-policy">Politica de cookie-uri</a>
 			</div>
 			<div class="actions" onclick="storeAccepted('accepted')">
-				<span class="validate-policy">Đã hiểu</span>
+				<span class="validate-policy">Înțeles</span>
 			</div>
 		</div>
 	</div>

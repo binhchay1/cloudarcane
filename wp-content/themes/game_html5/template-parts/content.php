@@ -25,9 +25,9 @@
 				game_html5_posted_on();
 				game_html5_posted_by();
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header>
 
 	<?php game_html5_post_thumbnail(); ?>
 
@@ -36,7 +36,6 @@
 		the_content(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'game_html5' ),
 					array(
 						'span' => array(
@@ -55,9 +54,9 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 		<?php game_html5_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</footer>
+</article><?php the_ID(); ?>
