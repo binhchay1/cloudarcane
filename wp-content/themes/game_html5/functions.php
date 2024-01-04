@@ -33,18 +33,12 @@ function game_html5_setup()
 	add_theme_support('automatic-feed-links');
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
-
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__('Primary', 'game_html5'),
 		)
 	);
 
-	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
 	add_theme_support(
 		'html5',
 		array(
@@ -57,8 +51,7 @@ function game_html5_setup()
 			'script',
 		)
 	);
-
-	// Set up the WordPress core custom background feature.
+	
 	add_theme_support(
 		'custom-background',
 		apply_filters(
@@ -70,14 +63,7 @@ function game_html5_setup()
 		)
 	);
 
-	// Add theme support for selective refresh for widgets.
 	add_theme_support('customize-selective-refresh-widgets');
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -112,13 +98,10 @@ function game_html5_widgets_init()
 }
 add_action('widgets_init', 'game_html5_widgets_init');
 
-/**
- * Enqueue scripts and styles.
- */
 function game_html5_scripts()
 {
 	wp_enqueue_style('game_html5-style-user', get_template_directory_uri() . '/css/user.css', array(), _S_VERSION);
-	wp_enqueue_style('game_html5-style-latin', get_template_directory_uri() . '/css/latin.css', array(), _S_VERSION);
+	wp_enqueue_style('game_html5-style-latin', get_template_directory_uri() . '/style.css', array(), _S_VERSION);
 	wp_enqueue_style('game_html5-style-app', get_template_directory_uri() . '/css/application.css', array(), _S_VERSION);
 	wp_style_add_data('game_html5-style', 'rtl', 'replace');
 

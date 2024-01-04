@@ -1,3 +1,17 @@
+/*!
+Theme Name: Game Html5
+Author: binhchay
+Description: This is theme only for game html5 modobom
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: test
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+
 hr,
 input[type="search"] {
     box-sizing: content-box;

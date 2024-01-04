@@ -47,6 +47,64 @@ foreach ($fileList as $key => $name) {
             }
         }
 
+        if (empty($dataPerGame['thumb'])) {
+            continue;
+        }
+
+        $path = '/games/' . $dataPerGame['name'];
+        $src = site_url() . '/modobom/' . $dataPerGame['name'];
+        $post_guid_p = site_url() . $path;
+        $post_content = '
+        <!-- wp:html -->
+            <div class="iframe-area">
+                <iframe loading="lazy" src="' . $src . '" id="game-iframe" frameBorder="0" scrolling="yes" allowfullscreen="true" 
+                webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true">
+                </iframe>
+            </div>
+        <!-- /wp:html -->';
+
+        $new_post_p = array(
+            'post_author' => 1,
+            'post_date' => date('Y-m-d H:i:s'),
+            'post_date_gmt' => date('Y-m-d H:i:s'),
+            'post_content' => $post_content,
+            'post_title' => ucfirst(str_replace('-', ' ', $dataPerGame['name'])),
+            'post_status' => 'publish',
+            'comment_status' => 'closed',
+            'ping_status' => 'closed',
+            'post_name' => $dataPerGame['name'],
+            'post_parent' => 0,
+            'guid' => $post_guid_p,
+            'menu_order' => 0,
+            'post_type' => 'page',
+        );
+
+        $post_id = wp_insert_post($new_post_p, true);
+        if (is_wp_error($post_id)) {
+            continue;
+        }
+        $dataPerGame['post_id'] = $post_id;
+        $post_name_i = $post_id . '-revision-v1';
+        $path_i = $post_id . '-autosave-v1/';
+        $post_guid_i = site_url() . '/' . $path_i;
+
+        $new_post_i = array(
+            'post_author' => 1,
+            'post_date' => date('Y-m-d H:i:s'),
+            'post_date_gmt' => date('Y-m-d H:i:s'),
+            'post_content' => $post_content,
+            'post_title' => ucfirst(str_replace('-', ' ', $dataPerGame['name'])),
+            'post_status' => 'inherit',
+            'comment_status' => 'closed',
+            'ping_status' => 'closed',
+            'post_name' => $post_name_i,
+            'post_parent' => $post_id,
+            'guid' => $post_guid_i,
+            'menu_order' => 0,
+            'post_type' => 'revision',
+        );
+
+        $post_id = wp_insert_post($new_post_i, true);
         $wpdb->insert('wp_games', $dataPerGame);
     }
 }

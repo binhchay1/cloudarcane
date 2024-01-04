@@ -68,7 +68,7 @@ $games = $wpdb->get_results($query . ' ORDER BY name ASC LIMIT ' . $offset . ', 
             <?php foreach ($games as $game) { ?>
                 <div class="item thumb videobox grid-column">
 
-                    <a title="Joc <?php echo $game->name ?> - Joacă online la <?php echo get_bloginfo() ?>" href="<?php echo get_template_directory_uri() . '/template-parts/game.php?name=' . $game->name ?>">
+                    <a title="Joc <?php echo $game->name ?> - Joacă online la <?php echo get_bloginfo() ?>" href="<?php echo '/game-html5-wp/games/' . $game->name ?>">
                         <div class="item__thumbarea">
                             <div class="item__microthumb"></div>
                             <div class="item__img-container">

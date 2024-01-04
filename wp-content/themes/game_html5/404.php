@@ -14,13 +14,13 @@
 	<div class="stars">
 		<div class="central-body">
 			<h1 class="code-error">404</h1>
-			<h1>Địa chỉ đường dẫn của bạn không tồn tại hoặc không tìm thấy. Vui lòng ấn vào nút bên dưới để quay lại trang chủ</h1>
-			<a href="{{ route('home') }}" class="btn-go-home">Về trang chủ</a>
+			<h1>URL-ul dvs. nu există sau nu a fost găsit. Vă rugăm să faceți clic pe butonul de mai jos pentru a reveni la pagina principală</h1>
+			<a href="{{ route('home') }}" class="btn-go-home">Pe pagina de start</a>
 		</div>
 		<div class="objects">
 			<img class="object_rocket" src="<?php echo get_template_directory_uri() . '/svg/rocket.svg' ?>" width="40px">
 			<div class="earth-moon">
-				<img class="object_earth" src="<?php echo get_template_directory_uri() . '/svg/earth.svg' ?>}" width="100px">
+				<img class="object_earth" src="<?php echo get_template_directory_uri() . '/svg/earth.svg' ?>" width="100px">
 				<img class="object_moon" src="<?php echo get_template_directory_uri() . '/svg/moon.svg' ?>" width="80px">
 			</div>
 			<div class="box_astronaut">
