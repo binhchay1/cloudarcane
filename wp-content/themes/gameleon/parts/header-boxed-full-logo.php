@@ -54,7 +54,7 @@ if( $td_logo && $td_logo != '' ) :
 					'menu' => 'menu', 
 					'container' => false, 
 					'menu_id' => 'menu', 
-					'menu_class'=>'', 
+					'menu_class'=>'fa-home', 
 					'theme_location'=>'mainmenu' 
 					) 
 				);

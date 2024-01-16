@@ -50,7 +50,7 @@
 				'compare' => '=',
 			),
 		),
-		'posts_per_page' => $td_post_per_page
+		'posts_per_page' => 4
 	);
 
 	$slider_posts_big = new WP_Query($argsBig);

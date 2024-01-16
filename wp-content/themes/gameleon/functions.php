@@ -40,9 +40,6 @@ require $template_directory . '/includes/td-ads.php';
 // Theme version
 require $template_directory . '/includes/version.php';
 
-// Import demo
-require $template_directory . '/includes/oneclick/import-demo-files.php';
-
 // Theme customizer
 require $template_directory . '/includes/customizer/controls.php';
 require $template_directory . '/includes/customizer/css.php';

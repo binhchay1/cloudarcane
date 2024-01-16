@@ -598,7 +598,13 @@ Front-end display of widget
             <?php
             global $wp_query, $paged;
             $metakey = 'post_views_count';
-            $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+            $argsFirstCategory = array(
+              'post_type' => 'game',
+              'meta_key' => $metakey,
+              'posts_per_page' => $posts,
+              'orderby' => $orderby
+            );
+            $recent_posts = new WP_Query($argsFirstCategory);
             $temp_query = $wp_query;
             $wp_query = null;
             $wp_query = $recent_posts;
@@ -794,7 +800,13 @@ Front-end display of widget
             <?php
             global $wp_query, $paged;
             $metakey_2 = 'post_views_count';
-            $recent_posts_2 = new WP_Query(array('cat' => $categories_2, 'orderby' => $orderby_2, 'meta_key' => $metakey_2, 'posts_per_page' => $posts_2));
+            $argsSecondCategory = array(
+              'post_type' => 'game',
+              'meta_key' => $metakey,
+              'posts_per_page' => $posts,
+              'orderby' => $orderby
+            );
+            $recent_posts_2 = new WP_Query($argsSecondCategory);
             $temp_query = $wp_query;
             $wp_query = null;
             $wp_query = $recent_posts_2;
@@ -1605,7 +1617,13 @@ Front-end display of widget
             <?php
             global $wp_query, $paged;
             $metakey = 'post_views_count';
-            $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+            $argsNewWeeklyGame = array(
+              'post_type' => 'game',
+              'meta_key' => $metakey,
+              'posts_per_page' => $posts,
+              'orderby' => $orderby
+            );
+            $recent_posts = new WP_Query($argsNewWeeklyGame);
             $temp_query = $wp_query;
             $wp_query = null;
             $wp_query = $recent_posts;
@@ -1994,7 +2012,13 @@ Front-end display of widget
             <?php
             global $wp_query, $paged;
             $metakey = 'post_views_count';
-            $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+            $argsWeeklyGame = array(
+              'post_type' => 'game',
+              'meta_key' => $metakey,
+              'posts_per_page' => $posts,
+              'orderby' => $orderby
+            );
+            $recent_posts = new WP_Query($argsWeeklyGame);
             $temp_query = $wp_query;
             $wp_query = null;
             $wp_query = $recent_posts;
@@ -3143,7 +3167,13 @@ Front-end display of widget
           <?php
           global $wp_query, $paged;
           $metakey = 'post_views_count';
-          $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+          $argsMostPlayed = array(
+            'post_type' => 'game',
+            'meta_key' => $metakey,
+            'posts_per_page' => $posts,
+            'orderby' => $orderby
+          );
+          $recent_posts = new WP_Query($argsMostPlayed);
           $temp_query = $wp_query;
           $wp_query = null;
           $wp_query = $recent_posts;
@@ -4420,7 +4450,13 @@ Front-end display of widget
           <?php
           global $wp_query, $paged;
           $metakey = 'post_views_count';
-          $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+          $argsSlideBottomSideBar = array(
+            'post_type' => 'game',
+            'meta_key' => $metakey,
+            'posts_per_page' => 3,
+            'orderby' => $orderby
+          );
+          $recent_posts = new WP_Query($argsSlideBottomSideBar);
           $temp_query = $wp_query;
           $wp_query = null;
           $wp_query = $recent_posts;
@@ -5035,7 +5071,13 @@ Front-end display of widget
         <?php
         global $wp_query, $paged;
         $metakey = 'post_views_count';
-        $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+        $argsFirstCategory = array(
+          'post_type' => 'game',
+          'meta_key' => $metakey,
+          'posts_per_page' => $posts,
+          'orderby' => $orderby
+        );
+        $recent_posts = new WP_Query($argsFirstCategory);
         $temp_query = $wp_query;
         $wp_query = null;
         $wp_query = $recent_posts;
@@ -5407,7 +5449,13 @@ Front-end display of widget
             <?php
             global $wp_query, $paged;
             $metakey = 'post_views_count';
-            $recent_posts = new WP_Query(array('cat' => $categories, 'orderby' => $orderby, 'meta_key' => $metakey, 'posts_per_page' => $posts));
+            $argsTopNew = array(
+              'post_type' => 'game',
+              'meta_key' => $metakey,
+              'posts_per_page' => $posts,
+              'orderby' => $orderby
+            );
+            $recent_posts = new WP_Query($argsTopNew);
             $temp_query = $wp_query;
             $wp_query = null;
             $wp_query = $recent_posts;
