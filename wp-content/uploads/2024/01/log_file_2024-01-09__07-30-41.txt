@@ -1,0 +1,108 @@
+
+---Downloaded files---
+The import files for: Dark Version were successfully downloaded!
+Initial max execution time = 36000
+Files info:
+Site URL = http://localhost/game-html5-wp
+Data file = C:\laragon\www\game-html5-wp/wp-content/themes/gameleon/includes/oneclick/demo/demo-content-1.xml
+Widget file = C:\laragon\www\game-html5-wp/wp-content/themes/gameleon/includes/oneclick/demo/gameleon-widgets-1.wie
+Customizer file = C:\laragon\www\game-html5-wp/wp-content/themes/gameleon/includes/oneclick/demo/customizer-1.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+ecs-sidebar-519 : Sidebar does not exist in theme (moving widget to Inactive)
+
+[G] Sidebar Slider - Shooter Games - Imported to Inactive
+[G] Carousel Post - Top New! - Imported to Inactive
+[G] Log in Box - No Title - Imported to Inactive
+
+ecs-sidebar-521 : Sidebar does not exist in theme (moving widget to Inactive)
+
+[G] Sidebar Slider - Action Games - Imported to Inactive
+[G] Video Module - Game Play - Imported to Inactive
+[G] Subscribe - No Title - Imported to Inactive
+
+ecs-sidebar-557 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Search - No Title - Imported to Inactive
+Arqam - Social Counter - Follow us - Imported to Inactive
+
+Home Page : 
+
+[G] Home Block 1 - Action Games - Imported
+[G] Home Block 3 - New Weekly Games! - Imported
+[G] Responsive Ads - No Title - Imported
+[G] Home Block 7 - Most played - Imported
+
+Home Wide : 
+
+[G] Home Block 8 - Today Highlights - Imported
+[G] Home Block 6 - Popular - Imported
+[G] Home Block 4 - Weekly Games - Imported
+
+Main Sidebar : 
+
+[G] Sidebar Block 1 - Aventure Games - Imported
+[G] Carousel Post - Top New! - Imported
+[G] Video Module - Game Play - Imported
+[G] Sidebar Slider - Shooter Games - Imported
+
+Sticky Sidebar : 
+
+[G] Responsive Ads - No Title - Imported
+
+Footer Widget 1 : 
+
+Text - No Title - Imported
+Audio - No Title - Imported
+
+Footer Widget 2 : 
+
+[G] Carousel Post - Top Rated Games - Imported
+
+Footer Widget 3 : 
+
+UserOnline - Users Online - Imported
+[G] Subscribe - No Title - Imported
+Text - No Title - Imported
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

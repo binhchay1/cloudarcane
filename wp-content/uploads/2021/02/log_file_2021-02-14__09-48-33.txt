@@ -1,0 +1,23 @@
+
+---Upload files---
+Content file was not uploaded. Error: No file provided.
+
+---Upload files---
+Widget file was not uploaded. Error: No file provided.
+
+---Upload files---
+Redux file was not uploaded. Error: Specified file failed upload test.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 300
+Files info:
+Site URL = http://www.tiguandesign.com/gameleon/dark
+Data file = not defined!
+Widget file = not defined!
+Customizer file = /home2/r71848tigu/public_html/gameleon/dark/wp-content/uploads/2021/02/customizer-1.dat
+Redux files:
+not defined!
+
+---Importing customizer settings---
+Customizer settings import finished!
