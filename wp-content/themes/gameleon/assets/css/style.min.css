@@ -9,8 +9,8 @@ html {
 
 body {
     margin: 0;
-    background-image: url('/wp-content/themes/gameleon/images/gameleon-background.png') !important;
-    background-repeat: no-repeat;
+    background-image: url('/game-html5-wp/gameleon-background.png') !important;
+    background-repeat: repeat !important;
     background-position: center;
     background-attachment: scroll;
 }

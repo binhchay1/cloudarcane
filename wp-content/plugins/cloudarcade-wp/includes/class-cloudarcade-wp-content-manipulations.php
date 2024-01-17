@@ -73,15 +73,12 @@ class Cloudarcade_Wp_Content_Manipulations {
 		// Check if we're inside the main loop in a single post page.
 		if ( is_single() && in_the_loop() && is_main_query() ) {
 			if ( get_post_type() === 'game' ) {
-				remove_filter( 'the_content', 'cloudarcade_content_game' );
+				// remove_filter( 'the_content', 'cloudarcade_content_game' );
 				ob_start(); // start output buffering
 				include CLOUDARCADE_WP_ROOT. 'templates/content-single-game.php';
 				$output = ob_get_clean(); // end output buffering and capture the output
-				add_filter( 'the_content', 'cloudarcade_content_game' );
+				// add_filter( 'the_content', 'cloudarcade_content_game' );
 				$content = $output; // append the output to the existing content
-				// Your custom content
-				// $custom_content = "<p>This is my custom content.</p>";
-				// $content = $custom_content;
 			}
 		}
 		return $content;
