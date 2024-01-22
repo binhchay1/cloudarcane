@@ -105,7 +105,7 @@ if (!defined('ABSPATH')) {
 									</div>
 
 									<div class="td-expand">
-										<form role="search" method="get" class="td-search-form" action="<?php echo esc_url(home_url('/')); ?>">
+										<form role="search" method="post" class="td-search-form" action="<?php echo esc_url(home_url('/search/')); ?>">
 											<div class="menu-search-form-wrap">
 												<input id="td-header-search" placeholder="<?php echo _e('search', 'gameleon'); ?>" type="text" value="<?php echo esc_attr(get_search_query()); ?>" name="s" />
 

@@ -17,28 +17,23 @@ add_action('template_redirect', function () {
 	if ($wp_query->is_404 === false) {
 		return;
 	} else {
-		// $paths = explode('/', $_SERVER['REQUEST_URI']);
-		// foreach ($paths as $path) {
-		// 	if ($path == '404') {
-		// 		if (end($paths) == '') {
-		// 			status_header(200);
-		// 			return;
-		// 		}
-		// 	} else {
-		// 		wp_redirect('/404/');
-		// 	}
-		// }
+		$paths = explode('/', $_SERVER['REQUEST_URI']);
+		foreach ($paths as $path) {
+			if ($path == '404') {
+				if (end($paths) == '') {
+					status_header(200);
+					return;
+				}
+			} else {
+				wp_redirect('/404/');
+			}
+		}
 	}
 }, PHP_INT_MAX);
 
-function wpb_change_search_url()
-{
-	if (is_search() && !empty($_GET['s'])) {
-		wp_redirect(home_url("/search/") . urlencode(get_query_var('s')));
-		exit();
-	}
-}
-add_action('template_redirect', 'wpb_change_search_url');
+add_action('init', function ($search) {
+	add_rewrite_rule('search/?$', 'index.php?s=' . $search, 'top');
+});
 
 
 $path = explode('/', $_SERVER['REQUEST_URI']);
@@ -83,7 +78,7 @@ add_action('wp_head', function () {
 	}
 
 	if (in_array('product-category', $paths)) {
-		$host = 'https://apkafe.com';
+		$host = "https://" . $_SERVER['HTTP_HOST'] . '/';
 		$urlProductCategory = $host . $_SERVER['REQUEST_URI'];
 		echo '<link rel="alternate" href="' . $urlProductCategory . '" hreflang="x-default" />';
 	}

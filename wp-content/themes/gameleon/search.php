@@ -27,7 +27,7 @@ if (is_active_sidebar('main-sidebar') || is_active_sidebar('sticky-sidebar')) {
 		</div>
 		<div class="td-wrap-content">
 			<?php if (have_posts()) : ?>
-				<form role="search" class="td-search-form" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+				<form role="search" class="td-search-form" method="post" id="searchform" action="<?php echo home_url('/search/'); ?>">
 					<div>
 						<label class="screen-reader-text" for="s"><?php esc_attr_e('Search for:', 'gameleon') ?></label>
 						<input type="text" class="td-widget-search-input" name="s" id="s" autocomplete="off" value="<?php echo esc_attr(get_search_query()); ?>" />
@@ -68,7 +68,7 @@ if (is_active_sidebar('main-sidebar') || is_active_sidebar('sticky-sidebar')) {
 			<?php else : ?>
 				<h3 class="m_b_40"><?php _e('Sorry, but nothing matched your search criteria.', 'gameleon'); ?></h3>
 				<p class="td__center"><?php echo esc_attr_e('If you\'re not happy with the results, please do another search', 'gameleon'); ?></p>
-				<form role="search" class="td-search-form" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+				<form role="search" class="td-search-form" method="post" id="searchform" action="<?php echo home_url('/search/'); ?>">
 					<div>
 						<label class="screen-reader-text" for="s"><?php esc_attr_e('Search for:', 'gameleon') ?></label>
 						<input type="text" class="td-widget-search-input" name="s" id="s" autocomplete="off" value="<?php echo esc_attr(get_search_query()); ?>" />
