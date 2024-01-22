@@ -7,6 +7,17 @@ Version: 1.0
 License: GPLv2 or later
 */
 
+define('BINHCHAY_ADMIN_VERSION', '1.0.0');
+define('BINHCHAY_ADMIN_DIR', 'binhchay');
+
+require plugin_dir_path(__FILE__) . 'admin-form.php';
+function run_ct_wp_admin_form()
+{
+	$plugin = new TopGame_Admin_Form();
+	$plugin->init();
+}
+run_ct_wp_admin_form();
+
 add_action('template_redirect', function () {
 
 	if ((defined('DOING_CRON') && DOING_CRON) || (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) || (defined('DOING_AJAX') && DOING_AJAX)) return;

@@ -16,6 +16,9 @@ do_action('cloudarcade_before_single_game');
 		<div class="game-iframe-container">
 			<iframe class="game-iframe" src="<?php echo esc_url($game_url); ?>" width="<?php echo esc_attr($game_width); ?>" height="<?php echo esc_attr($game_height); ?>" scrolling="no" frameborder="0" allowfullscreen></iframe>
 		</div>
+		<div class="set-button d-none" id="btn-fullscreen-area">
+			<button id="fullscreeniframe" title="view in full screen" class="button btn btn-warning rounded-0"><i class="fas fa-expand"></i></button>
+		</div>
 		<?php do_action('cloudarcade_after_game_iframe'); ?>
 
 		<?php do_action('cloudarcade_before_game_info'); ?>
@@ -63,5 +66,43 @@ do_action('cloudarcade_before_single_game');
 		</div>
 	</div>
 </div>
+<script>
+	(function(window, document) {
+		let $ = function(selector, context) {
+			return (context || document).querySelector(selector)
+		};
+
+		let iframe = $("iframe"),
+			domPrefixes = 'Webkit Moz O ms Khtml'.split(' ');
+
+		let fullscreen = function(elem) {
+			let prefix;
+			for (let i = -1, len = domPrefixes.length; ++i < len;) {
+				prefix = domPrefixes[i].toLowerCase();
+
+				if (elem[prefix + 'EnterFullScreen']) {
+
+					return prefix + 'EnterFullScreen';
+				} else if (elem[prefix + 'RequestFullScreen']) {
+
+					return prefix + 'RequestFullScreen';
+				}
+			}
+
+			return false;
+		};
+		let fullscreenother = fullscreen(document.createElement("iframe"));
+
+		if (!fullscreen) {
+			alert("Fullscreen won't work, please make sure you're using a browser that supports it and you have enabled the feature");
+			return;
+		}
+
+		$("#fullscreeniframe").addEventListener("click", function() {
+			iframe[fullscreenother]();
+		}, false);
+
+	})(this, this.document);
+</script>
 
 <?php do_action('cloudarcade_after_single_game'); ?>

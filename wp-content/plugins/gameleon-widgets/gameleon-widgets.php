@@ -583,12 +583,17 @@ Front-end display of widget
       <div class="grid col-340">
         <div class="td-content-inner">
 
+          <?php
+          global $wp_query, $paged, $wpdb;
+          $metakey = 'post_views_count';
+          $resultFirst = $wpdb->get_results("SELECT * FROM wp_set_category WHERE location = 'first'");
+          ?>
           <div class="widget-title">
             <h3>
               <?php if ('all' !== $instance['categories']) : ?>
-                <a href="<?php echo esc_url(get_category_link($categories)); ?>"><?php echo $title; ?></a>
+                <a href="<?php echo esc_url('/game-category/' . $resultFirst[0]->category . '/'); ?>"><?php echo ucfirst($resultFirst[0]->category) . ' Games'; ?></a>
               <?php else : ?>
-                <?php echo $title; ?>
+                <?php echo ucfirst($resultFirst[0]->category) . ' Games'; ?>
               <?php endif; ?>
             </h3>
           </div>
@@ -596,11 +601,16 @@ Front-end display of widget
           <div class="td-wrap-content">
 
             <?php
-            global $wp_query, $paged;
-            $metakey = 'post_views_count';
+
             $argsFirstCategory = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'game_category',
+                  'field' => 'slug',
+                  'terms' => $resultFirst[0]->category,
+                ),
+              ),
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );
@@ -756,7 +766,7 @@ Front-end display of widget
               </div>
 
               <?php if ('all' !== $instance['categories']) : ?>
-                <a href="<?php echo esc_url(get_category_link($categories)); ?>">
+                <a href="<?php echo esc_url('/game-category/' . $resultFirst[0]->category . '/'); ?>">
                   <div class="moregames-link">
                     <?php echo $readmore; ?><i class="fas fa-angle-right"></i>
                   </div>
@@ -788,21 +798,31 @@ Front-end display of widget
 
       <div class="grid col-340 fit">
         <div class="td-content-inner">
-
+          <?php
+          global $wp_query, $paged, $wpdb;
+          $metakey = 'post_views_count';
+          $resultSecond = $wpdb->get_results("SELECT * FROM wp_set_category WHERE location = 'second'");
+          ?>
           <div class="widget-title">
             <h3>
-              <a href="<?php echo esc_url(get_category_link($categories_2)); ?>"><?php echo $title_2; ?></a>
+              <a href="<?php echo esc_url('/game-category/' . $resultSecond[0]->category . '/'); ?>"><?php echo ucfirst($resultSecond[0]->category) . ' Games'; ?></a>
             </h3>
           </div>
 
           <div class="td-wrap-content">
 
             <?php
-            global $wp_query, $paged;
+
             $metakey_2 = 'post_views_count';
             $argsSecondCategory = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'game_category',
+                  'field' => 'slug',
+                  'terms' => $resultSecond[0]->category,
+                ),
+              ),
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );
@@ -960,10 +980,10 @@ Front-end display of widget
               <div class="gamesnumber tooltip" title="<?php echo $recent_posts_2->found_posts; ?> <?php _e('articles in this category', 'gameleon'); ?>">
                 <?php echo $recent_posts_2->found_posts; ?>
               </div>
-              <a href="<?php echo esc_url(get_category_link($categories_2)); ?>">
-                <div class="moregames-link">
-                  <?php echo $readmore_2; ?><i class="fas fa-angle-right"></i>
-                </div>
+              <a href="<?php echo esc_url('/game-category/' . $resultSecond[0]->category . '/'); ?>"><?php echo ucfirst($resultSecond[0]->category) . ' Games'; ?></a>
+              <div class="moregames-link">
+                <?php echo $readmore_2; ?><i class="fas fa-angle-right"></i>
+              </div>
               </a>
             </div>
 
@@ -1615,11 +1635,13 @@ Front-end display of widget
         <div class="td-wrap-content">
           <div class="td-fly-in">
             <?php
-            global $wp_query, $paged;
+            global $wp_query, $paged, $wpdb;
             $metakey = 'post_views_count';
+            $resultNewWeeklyGame = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'new_weekly_games'");
+            $postInNewWeeklyGame = explode(',', $resultNewWeeklyGame[0]->post_id);
             $argsNewWeeklyGame = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'post__in' => $postInNewWeeklyGame,
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );
@@ -2010,11 +2032,13 @@ Front-end display of widget
           <div class="td-fly-in">
 
             <?php
-            global $wp_query, $paged;
+            global $wp_query, $paged, $wpdb;
             $metakey = 'post_views_count';
+            $resultWeeklyGame = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'weekly_games'");
+            $postInWeeklyGame = explode(',', $resultWeeklyGame[0]->post_id);
             $argsWeeklyGame = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'post__in' => $postInWeeklyGame,
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );
@@ -2587,11 +2611,13 @@ Front-end display of widget
         <div class="td-wrap-content">
           <div class="td-fly-in">
             <?php
-            global $wp_query, $paged;
+            global $wp_query, $paged, $wpdb;
             $metakey = 'post_views_count';
+            $resultPopular = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'popular'");
+            $postInPopular = explode(',', $resultPopular[0]->post_id);
             $argsPopular = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'post__in' => $postInPopular,
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );
@@ -2600,7 +2626,6 @@ Front-end display of widget
             $wp_query = null;
             $wp_query = $recent_posts;
             ?>
-
 
             <?php $counter = 1 ?>
             <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
@@ -3165,11 +3190,13 @@ Front-end display of widget
 
         <div class="td-fly-in">
           <?php
-          global $wp_query, $paged;
+          global $wp_query, $paged, $wpdb;
           $metakey = 'post_views_count';
+          $resultMostPlayed = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'most_played'");
+          $postInMostPlayed = explode(',', $resultMostPlayed[0]->post_id);
           $argsMostPlayed = array(
             'post_type' => 'game',
-            'meta_key' => $metakey,
+            'post__in' => $postInMostPlayed,
             'posts_per_page' => $posts,
             'orderby' => $orderby
           );
@@ -4420,11 +4447,16 @@ Front-end display of widget
       <?php // =============================== MAIN BLOCK =============================== 
       ?>
 
+      <?php
+      global $wp_query, $paged, $wpdb;
+      $metakey = 'post_views_count';
+      $resultFourth = $wpdb->get_results("SELECT * FROM wp_set_category WHERE location = 'first'");
+      ?>
       <?php if ($title) : ?>
         <div class="widget-title">
           <h3>
             <?php if ('all' !== $instance['categories']) : ?>
-              <a href="<?php echo esc_url(get_category_link($categories)); ?>"><?php echo $title; ?></a>
+              <a href="<?php echo esc_url('/game-category/' . $resultFourth[0]->category . '/'); ?>"><?php echo ucfirst($resultFourth[0]->category) . ' Games'; ?></a>
             <?php else : ?>
               <?php echo $title; ?>
             <?php endif; ?>
@@ -4450,13 +4482,19 @@ Front-end display of widget
           <?php
           global $wp_query, $paged;
           $metakey = 'post_views_count';
-          $argsSlideBottomSideBar = array(
+          $argsFourthCategory = array(
             'post_type' => 'game',
-            'meta_key' => $metakey,
-            'posts_per_page' => 3,
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'game_category',
+                'field' => 'slug',
+                'terms' => $resultFourth[0]->category,
+              ),
+            ),
+            'posts_per_page' => $posts,
             'orderby' => $orderby
           );
-          $recent_posts = new WP_Query($argsSlideBottomSideBar);
+          $recent_posts = new WP_Query($argsFourthCategory);
           $temp_query = $wp_query;
           $wp_query = null;
           $wp_query = $recent_posts;
@@ -5049,11 +5087,16 @@ Front-end display of widget
       <?php // =============================== MAIN BLOCK =============================== 
       ?>
 
+      <?php
+      global $wp_query, $paged, $wpdb;
+      $metakey = 'post_views_count';
+      $resultThird = $wpdb->get_results("SELECT * FROM wp_set_category WHERE location = 'third'");
+      ?>
       <?php if ($title) : ?>
         <div class="widget-title">
           <h3>
             <?php if ('all' !== $instance['categories']) : ?>
-              <a href="<?php echo esc_url(get_category_link($categories)); ?>"><?php echo $title; ?></a>
+              <a href="<?php echo esc_url('/game-category/' . $resultThird[0]->category . '/'); ?>"><?php echo ucfirst($resultThird[0]->category) . ' Games'; ?></a>
             <?php else : ?>
               <?php echo $title; ?>
             <?php endif; ?>
@@ -5069,15 +5112,21 @@ Front-end display of widget
         ?>
 
         <?php
-        global $wp_query, $paged;
+        global $wp_query, $paged, $wpdb;
         $metakey = 'post_views_count';
-        $argsFirstCategory = array(
+        $argsThirdCategory = array(
           'post_type' => 'game',
-          'meta_key' => $metakey,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'game_category',
+              'field' => 'slug',
+              'terms' => $resultThird[0]->category,
+            ),
+          ),
           'posts_per_page' => $posts,
           'orderby' => $orderby
         );
-        $recent_posts = new WP_Query($argsFirstCategory);
+        $recent_posts = new WP_Query($argsThirdCategory);
         $temp_query = $wp_query;
         $wp_query = null;
         $wp_query = $recent_posts;
@@ -5221,10 +5270,10 @@ Front-end display of widget
           </div>
 
           <?php if ('all' !== $instance['categories']) : ?>
-            <a href="<?php echo esc_url(get_category_link($categories)); ?>">
-              <div class="moregames-link">
-                <?php echo $readmore; ?><i class="fas fa-angle-right"></i>
-              </div>
+            <a href="<?php echo esc_url('/game-category/' . $resultThird[0]->category . '/'); ?>"><?php echo ucfirst($resultThird[0]->category) . ' Games'; ?></a>
+            <div class="moregames-link">
+              <?php echo $readmore; ?><i class="fas fa-angle-right"></i>
+            </div>
             </a>
           <?php endif; ?>
 
@@ -5447,11 +5496,13 @@ Front-end display of widget
             ?>
 
             <?php
-            global $wp_query, $paged;
+            global $wp_query, $paged, $wpdb;
             $metakey = 'post_views_count';
+            $resultTopNew = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'top_new'");
+            $postInTopNew = explode(',', $resultTopNew[0]->post_id);
             $argsTopNew = array(
               'post_type' => 'game',
-              'meta_key' => $metakey,
+              'post__in' => $postInTopNew,
               'posts_per_page' => $posts,
               'orderby' => $orderby
             );

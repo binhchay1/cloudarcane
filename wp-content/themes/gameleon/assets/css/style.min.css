@@ -11413,3 +11413,32 @@ body.td-dark-mode,
     display: flex;
     align-items: center;
 }
+
+.trending-search {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-search p {
+    margin: 0;
+}
+
+.trending-content {
+    width: 100%;
+    display: flex !important;
+    flex-wrap: wrap;
+    overflow: hidden;
+    column-gap: 8px;
+    row-gap: 12px;
+    align-content: start;
+}
+
+.trending-content .hot {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    background: #313131;
+    cursor: pointer;
+}

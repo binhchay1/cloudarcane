@@ -27,29 +27,23 @@
 		$slider_tags = $slider_tags_option;
 	}
 
+	global $wpdb;
+	$resultBig = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'slide_big'");
+	$postInBig = explode(',', $resultBig[0]->post_id);
+	$resultSmall = $wpdb->get_results("SELECT * FROM wp_binhchay WHERE key_post = 'slide_small'");
+	$postInSmall = explode(',', $resultSmall[0]->post_id);
+
 	$argsBig = array(
 		'ignore_sticky_posts' => 1,
 		'post_type' => 'game',
-		'meta_query' => array(
-			array(
-				'key' => 'mabp_game_tag',
-				'value' => 'slide-big',
-				'compare' => '=',
-			),
-		),
+		'post__in' => $postInBig,
 		'posts_per_page' => $td_post_per_page
 	);
 
 	$argsSmall = array(
 		'ignore_sticky_posts' => 1,
 		'post_type' => 'game',
-		'meta_query' => array(
-			array(
-				'key' => 'mabp_game_tag',
-				'value' => 'slide-small',
-				'compare' => '=',
-			),
-		),
+		'post__in' => $postInSmall,
 		'posts_per_page' => 4
 	);
 
