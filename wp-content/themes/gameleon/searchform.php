@@ -9,7 +9,7 @@ if( !defined( 'ABSPATH' ) ) {
 	SEARCH FORM TEMPLATE
 -----------------------------------------------------------------------------------------------------------*/
 ?>
-<form role="search" class="td-search-form" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+<form role="search" class="td-search-form" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
 	<div>
 		<label class="screen-reader-text" for="s"><?php esc_attr_e( 'Search for:', 'gameleon' ) ?></label>
 		<input type="text" class="td-widget-search-input" name="s" id="s" autocomplete="off" value="<?php echo esc_attr( get_search_query() ); ?>" />
