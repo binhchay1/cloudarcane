@@ -8,6 +8,7 @@ do_action('cloudarcade_before_single_game');
 	<div class="single-game">
 		<?php
 		do_action('cloudarcade_before_game_iframe');
+
 		$game_id = get_the_ID();
 		$game_url = ca_get_game_url($game_id);
 		$game_width = get_post_meta($game_id, 'game_width', true);
@@ -191,9 +192,7 @@ do_action('cloudarcade_before_single_game');
 			<div class="video-game-iframe">
 				<div class="body-video-game-iframe">
 					<h3>Video intro</h3>
-					<video loop autoplay muted preload="none">
-						<source src="<?php echo $get_meta['mabp_video_url'][0] ?>" type="video/mp4" />
-					</video>
+					<iframe width="560" height="315" src="<?php echo $get_meta['mabp_video_url'][0] ?>&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
@@ -280,9 +279,7 @@ do_action('cloudarcade_before_single_game');
 		<?php endif; ?>
 		<?php if (!empty($get_meta['mabp_video_url'][0])) { ?>
 			<h2>Video intro</h2>
-			<video loop autoplay muted preload="none">
-				<source src="<?php echo $get_meta['mabp_video_url'][0] ?>" type="video/ogg" />
-			</video>
+			<iframe width="560" height="315" src="<?php echo $get_meta['mabp_video_url'][0] ?>&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		<?php } ?>
 		<h2>You may like</h2>
 		<?php
@@ -335,5 +332,4 @@ do_action('cloudarcade_before_single_game');
 
 	})(this, this.document);
 </script>
-
 <?php do_action('cloudarcade_after_single_game'); ?>
