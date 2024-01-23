@@ -16,8 +16,17 @@ if (!defined('ABSPATH')) {
 		<?php echo html_entity_decode(esc_html($image)); ?>
 	<?php else : // show image placeholder
 	?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<img src="<?php echo get_post_meta(get_the_ID(), 'game_thumb1')[0] ?>" width="300" height="365" alt="<?php the_title(); ?>" />
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="img-thumb-game-with-video">
+			<img src="<?php echo get_post_meta(get_the_ID(), 'game_thumb1')[0] ?>" width="300" height="145" alt="<?php the_title(); ?>" />
+			<?php $meta = get_post_meta(get_the_ID());
+			if (array_key_exists('mabp_video_url', $meta)) { ?>
+				<div class="pre-video-load">
+					<video loop autoplay muted preload="none">
+						<source src="<?php echo $meta['mabp_video_url'][0] ?>" type="video/ogg" />
+					</video>
+				</div>
+				<div class="foot-pre-load"></div>
+			<?php } ?>
 		</a>
 	<?php endif; // end of get_the_post_thumbnail 
 	?>

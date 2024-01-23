@@ -73,7 +73,7 @@ if (!function_exists('gameleon_enqueue_css')) {
     }
 
     // Main theme stylesheet
-    wp_enqueue_style('gameleon-style',  $template_directory_uri . '/assets/css/style' . $css_suffix . '.css', false, $gameleon['Version']);
+    wp_enqueue_style('gameleon-style',  $template_directory_uri . '/assets/css/style' . $css_suffix . '.css', false);
 
     if (is_child_theme()) {
       wp_enqueue_style('gameleon-child-style', get_stylesheet_uri(), false, $theme['Version']);
