@@ -78,7 +78,7 @@ if (!defined('ABSPATH')) {
 									<span class="line"></span>
 									<span class="line"></span>
 								</div>
-							</div><!-- #top-menu -->
+							</div>
 						<?php endif; ?>
 
 						<div id="mobile-logo">
@@ -128,8 +128,8 @@ if (!defined('ABSPATH')) {
 					<div id="logo-close">
 						<div id="close-menu">
 							<span class="close-menu"><span class="dashicons dashicons-no-alt"></span></span>
-						</div><!-- #close-menu -->
-					</div><!-- #logo-close -->
+						</div>
+					</div>
 
 					<?php if (has_nav_menu('mainmenu')) : ?>
 						<div id="mobile-navigation">
@@ -139,9 +139,8 @@ if (!defined('ABSPATH')) {
 									'container' => false,
 									'menu_class' => 'menu'
 								)); ?>
-							</nav><!-- .navigation -->
-
-						</div><!-- #mobile-navigation -->
+							</nav>
+						</div>
 					<?php endif; ?>
 
 					<div id="mobile-search">

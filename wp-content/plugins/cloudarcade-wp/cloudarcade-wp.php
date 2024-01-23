@@ -27,7 +27,7 @@ define( 'CLOUDARCADE_WP_VERSION', '1.0.0' );
 
 
 /**
- * pugin prefix
+ * plugin prefix
  */
 define( 'CLOUDARCADE_PREFIX', 'CAWP'  );
 /**

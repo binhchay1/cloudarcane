@@ -11444,7 +11444,7 @@ body.td-dark-mode,
     cursor: pointer;
 }
 
-#fullscreeniframe {
+.button-control-iframe button {
     float: right;
     padding: 5px;
 }
@@ -11474,4 +11474,127 @@ body.td-dark-mode,
     width: 100%;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.content-game-iframe {
+    visibility: hidden;
+    color: rgb(222, 202, 255);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    background: none rgb(33, 34, 51);
+    padding: 15px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    right: 0;
+}
+
+.body-content-game-iframe {
+    overflow: hidden auto;
+    margin-top: 32px;
+    padding: 8px 8px 8px 16px;
+    border-radius: 8px;
+    background-color: rgb(33, 34, 51);
+    text-align: left;
+    color: rgb(189, 191, 206);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.body-content-game-iframe h3 {
+    font-size: 24px;
+    color: rgb(249, 250, 255);
+    font-weight: 800;
+    text-align: center;
+    margin-block-start: 0px;
+}
+
+.review-game-iframe {
+    visibility: hidden;
+    color: rgb(222, 202, 255);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    background: none rgb(33, 34, 51);
+    padding: 15px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    right: 0;
+}
+
+.body-review-game-iframe {
+    overflow: hidden auto;
+    margin-top: 32px;
+    padding: 8px 8px 8px 16px;
+    border-radius: 8px;
+    background-color: rgb(33, 34, 51);
+    text-align: left;
+    color: rgb(189, 191, 206);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.body-review-game-iframe h3 {
+    font-size: 24px;
+    color: rgb(249, 250, 255);
+    font-weight: 800;
+    text-align: center;
+    margin-block-start: 0px;
+}
+
+.video-game-iframe {
+    visibility: hidden;
+    color: rgb(222, 202, 255);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    background: none rgb(33, 34, 51);
+    padding: 15px;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    right: 0;
+}
+
+.body-video-game-iframe {
+    overflow: hidden auto;
+    margin-top: 32px;
+    padding: 8px 8px 8px 16px;
+    border-radius: 8px;
+    background-color: rgb(33, 34, 51);
+    text-align: left;
+    color: rgb(189, 191, 206);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.body-video-game-iframe h3 {
+    font-size: 24px;
+    color: rgb(249, 250, 255);
+    font-weight: 800;
+    text-align: center;
+    margin-block-start: 0px;
+}
+
+#review-box h2.review-box-header {
+    text-align: center;
+    font-size: 18px !important;
+}
+
+.kksr-valign-top {
+    display: none;
+}
+
+.td-dark-mode #review-box h2.review-box-header {
+    margin: 0 15px 40px !important;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.info-pre-game {
+    margin-top: 20px;
 }

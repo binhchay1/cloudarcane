@@ -18,7 +18,7 @@ function ca_get_random_games(){
     // Query for your 'game' custom post type
     $args = array(
         'post_type' => 'game',
-        'posts_per_page' => 4,
+        'posts_per_page' => 12,
         'paged' => $paged,
         'orderby' => 'rand'  // Add this line to order games randomly
     ) + $orderby_args;
