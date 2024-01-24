@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 			<?php $meta = get_post_meta(get_the_ID());
 			if (array_key_exists('mabp_video_url', $meta)) { ?>
 				<div class="pre-video-load">
-					<iframe style="width: 100%;" src="<?php echo $meta['mabp_video_url'][0] ?>&autoplay=1&mute=1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<iframe style="width: 100%; height: 100%;" src="<?php echo $meta['mabp_video_url'][0] ?>&autoplay=1&mute=1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
 				<div class="foot-pre-load"></div>
 			<?php } ?>

@@ -59,7 +59,6 @@ if( $td_logo && $td_logo != '' ) :
 					) 
 				);
 			?>
-			
 			</nav><!-- .navigation -->
 		</div><!-- #top-navigation -->
 </div>

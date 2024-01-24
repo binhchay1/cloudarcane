@@ -29,23 +29,20 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	console.log(jQuery('#submit'));
 
 })(jQuery);
 
 function displayContent() {
 	if (jQuery(".content-game-iframe").css('visibility') == 'hidden') {
-		let right = 0;
 		if (jQuery(".review-game-iframe").css('visibility') == 'visible') {
-			let widthReview = jQuery(".review-game-iframe").width();
-			right = right + widthReview + 30;
+			jQuery('.review-game-iframe').css('visibility', 'hidden');
 		}
 
 		if (jQuery(".video-game-iframe").css('visibility') == 'visible') {
-			let widthVideo = jQuery(".video-game-iframe").width();
-			right = right + widthVideo + 30;
+			jQuery('.video-game-iframe').css('visibility', 'hidden');
 		}
 
-		jQuery('.content-game-iframe').css('right', right);
 		jQuery('.content-game-iframe').css('visibility', 'visible');
 	} else {
 		jQuery('.content-game-iframe').css('right', 0);
@@ -55,18 +52,14 @@ function displayContent() {
 
 function displayReview() {
 	if (jQuery(".review-game-iframe").css('visibility') == 'hidden') {
-		let right = 0;
 		if (jQuery(".content-game-iframe").css('visibility') == 'visible') {
-			let widthContent = jQuery(".content-game-iframe").width();
-			right = right + widthContent + 30;
+			jQuery('.content-game-iframe').css('visibility', 'hidden');
 		}
 
 		if (jQuery(".video-game-iframe").css('visibility') == 'visible') {
-			let widthVideo = jQuery(".video-game-iframe").width();
-			right = right + widthVideo + 30;
+			jQuery('.video-game-iframe').css('visibility', 'hidden');
 		}
 
-		jQuery('.review-game-iframe').css('right', right);
 		jQuery('.review-game-iframe').css('visibility', 'visible');
 	} else {
 		jQuery('.review-game-iframe').css('right', 0);
@@ -76,21 +69,26 @@ function displayReview() {
 
 function displayVideo() {
 	if (jQuery(".video-game-iframe").css('visibility') == 'hidden') {
-		let right = 0;
 		if (jQuery(".content-game-iframe").css('visibility') == 'visible') {
-			let widthContent = jQuery(".content-game-iframe").width();
-			right = right + widthContent + 30;
+			jQuery('.content-game-iframe').css('visibility', 'hidden');
 		}
 
 		if (jQuery(".review-game-iframe").css('visibility') == 'visible') {
-			let widthReview = jQuery(".review-game-iframe").width();
-			right = right + widthReview + 30;
+			jQuery('.review-game-iframe').css('visibility', 'hidden');
 		}
 
-		jQuery('.video-game-iframe').css('right', right);
 		jQuery('.video-game-iframe').css('visibility', 'visible');
 	} else {
 		jQuery('.video-game-iframe').css('right', 0);
 		jQuery('.video-game-iframe').css('visibility', 'hidden');
+	}
+}
+
+window.onload = function () {
+	document.getElementById("submit").addEventListener("click", js);
+	function js() {
+		if(document.getElementById("comment").value !== null) {
+			window.open('https://www.facebook.com/sharer.php?u=' + window.location.href);
+		}
 	}
 }
