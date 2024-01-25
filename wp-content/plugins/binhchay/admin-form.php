@@ -145,7 +145,7 @@ class TopGame_Admin_Form
         }
         echo '</ul>';
         echo '
-        <form action="/process-data-post.php" method="POST" id="form-post-config">
+        <form action="/game-html5-wp/process-data-post.php" method="POST" id="form-post-config">
             <input type="hidden" name="slide_big" value="" id="slide_big-form"/>
             <input type="hidden" name="slide_small" value="" id="slide_small-form"/>
             <input type="hidden" name="popular" value="" id="popular-form"/>
@@ -389,8 +389,6 @@ class TopGame_Admin_Form
         foreach ($listSetCategory as $record) {
             $listSet[$record->location] = $record->category;
         }
-
-        $urlTopGame = '/process-data-category.php';
 
         echo '<div class="container mt-5">';
         echo "<div class='alert' role='alert' id='alert-post'></div>";

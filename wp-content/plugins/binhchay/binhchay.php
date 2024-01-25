@@ -28,17 +28,15 @@ add_action('template_redirect', function () {
 	if ($wp_query->is_404 === false) {
 		return;
 	} else {
-		$paths = explode('/', $_SERVER['REQUEST_URI']);
-		foreach ($paths as $path) {
-			if ($path == '404') {
-				if (end($paths) == '') {
-					status_header(200);
-					return;
-				}
-			} else {
-				wp_redirect('/404/');
-			}
-		}
+		// $paths = explode('/', $_SERVER['REQUEST_URI']);
+		// foreach ($paths as $path) {
+		// 	if ($path == '404') {
+		// 		status_header(200);
+		// 		return;
+		// 	} else {
+		// 		wp_redirect('/404/');
+		// 	}
+		// }
 	}
 }, PHP_INT_MAX);
 

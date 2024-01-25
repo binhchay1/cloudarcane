@@ -15,4 +15,4 @@ foreach ($posts as $key => $post) {
     $results = $wpdb->get_results($sql);
 }
 
-wp_redirect(admin_url('/admin.php?page=apkafe-seo&status=saved'));
+wp_redirect(admin_url('/admin.php?page=topgame-seo&status=saved'));
