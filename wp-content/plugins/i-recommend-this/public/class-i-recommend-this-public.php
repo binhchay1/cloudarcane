@@ -1,15 +1,18 @@
 <?php
 
-class Themeist_IRecommendThis_Public {
+class Themeist_IRecommendThis_Public
+{
 
 	/**
 	 * @param string $plugin_file
 	 */
-	public function __construct( $plugin_file ) {
+	public function __construct($plugin_file)
+	{
 		$this->plugin_file = $plugin_file;
 	}
 
-	public function add_public_hooks() {
+	public function add_public_hooks()
+	{
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
 		add_action('wp_ajax_dot-irecommendthis', array($this, 'ajax_callback'));
 		add_action('wp_ajax_nopriv_dot-irecommendthis', array($this, 'ajax_callback'));
@@ -68,21 +71,23 @@ class Themeist_IRecommendThis_Public {
 		}
 
 		$options = get_option('dot_irecommendthis_settings');
-		if (!isset($options['add_to_posts'])) $options['add_to_posts'] = '0';
-		if (!isset($options['add_to_other'])) $options['add_to_other'] = '0';
+		if ($options == true) {
+			if (!isset($options['add_to_posts'])) $options['add_to_posts'] = '0';
+			if (!isset($options['add_to_other'])) $options['add_to_other'] = '0';
+		}
 
 		if (is_singular('post') && $options['add_to_posts']) $content .= $this->dot_recommend();
 		if ((is_home() || is_category() || is_tag() || is_author() || is_date() || is_search()) && $options['add_to_other']) $content .= $this->dot_recommend();
 
 		return $content;
-
 	}    //dot_content
 
 	/*--------------------------------------------*
 	 * AJAX Callback
 	 *--------------------------------------------*/
 
-	function ajax_callback($post_id) {
+	function ajax_callback($post_id)
+	{
 		// Verify the nonce
 		if (isset($_POST['security']) || wp_verify_nonce($_POST['security'], 'dot-irecommendthis-nonce')) {
 			$options = get_option('dot_irecommendthis_settings');
@@ -205,13 +210,14 @@ class Themeist_IRecommendThis_Public {
 	/*--------------------------------------------*
 	 * Shortcode
 	 *--------------------------------------------*/
-	function shortcode($atts) {
+	function shortcode($atts)
+	{
 		extract(shortcode_atts(array('id' => null), $atts));
 		return $this->dot_recommend(intval($id));
-
 	}    //shortcode
 
-	function dot_recommend($id = null) {
+	function dot_recommend($id = null)
+	{
 		global $wpdb, $post;
 
 		$ip = sanitize_text_field($_SERVER['REMOTE_ADDR']);
