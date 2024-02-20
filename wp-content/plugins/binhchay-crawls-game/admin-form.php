@@ -185,7 +185,7 @@ class Admin_form_get_game
                     continue;
                 }
                 $getDescription = file_get_html('https://www.gamepix.com' . $link_play);
-                if(!$getDescription) {
+                if (!$getDescription) {
                     continue;
                 }
                 $arrayP = $getDescription->find('.text-description p');
@@ -219,20 +219,12 @@ class Admin_form_get_game
             wp_insert_post($my_post);
         }
 
-        $end = microtime(true);
-        $elapsed = $end - $start;
-        echo '<pre>';
-        var_dump($elapsed);
-        echo '</pre>';
-
-        die();
-
-        // if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        //     $result = json_encode($result);
-        //     echo $result;
-        // } else {
-        //     header("Location: " . $_SERVER["HTTP_REFERER"]);
-        // }
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            $result = json_encode($result);
+            echo $result;
+        } else {
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        }
     }
 
     public static function slugify($text, string $divider = '-')

@@ -749,6 +749,7 @@ function mashshareShow()
         'div' => [
             'class' => [],
             'style' => [],
+            'data-mashtip' => true
         ],
         'span' => [
             'class' => [],

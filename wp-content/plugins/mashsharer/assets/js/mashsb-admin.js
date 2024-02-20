@@ -192,10 +192,18 @@ jQuery(document).ready(function ($) {
 
         // If active tab is Add-On Settings return empty defaultTab value
         tab_addons = jQuery('.mashsb.nav-tab-wrapper a.nav-tab-active:nth-child(2)');
-        tab_licenses = jQuery('.mashsb.nav-tab-wrapper a.nav-tab-active:nth-child(3)');
 
-        if (tab_addons.length > 0 || tab_licenses.length > 0) {
-            return;
+        // get all the tabs ids and check with tab from cookie
+        $tabs_ids =  jQuery('.mashsb_container .mashsb-tabs').map(function() {
+            return this.id.replace('-nav', '');
+        }).get();
+
+        const last_active_tab = mashsb_get_tab_from_cookie();
+        const tab_exists = $tabs_ids.find(tab => '#'+tab == last_active_tab);
+        
+        if(!tab_exists) {
+            mashsb_setCookie('mashsb_active_tab', null);
+            return;                
         }
         // Return active tab from cookie
         return mashsb_get_tab_from_cookie() + '-nav';
@@ -212,9 +220,7 @@ jQuery(document).ready(function ($) {
 
     // Get active tab (Not for Add-On Settings)
     $('#mashsb_container').bind('easytabs:after', function () {
-        if (jQuery('.mashsb.nav-tab-wrapper a.nav-tab-active:nth-child(2)').length == 0) {
-            find_active_tab();
-        }
+        find_active_tab();
     });
 
     if ($(".mashtab").length) {
@@ -1016,10 +1022,8 @@ jQuery(document).ready(function ($) {
             if ($selectedTab.length === 1) {
                 $defaultTab = $selectedTab;
                 settings.cycle = false;
-
             } else {
                 $panel = plugin.matchInPanel(hash);
-
                 // If one of the panels contains the element matching the hash,
                 // make it active on page-load
                 if ($panel.length) {

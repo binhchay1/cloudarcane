@@ -1,4 +1,4 @@
-=== Social Media Share Buttons And Social Buttons | MashShare ===
+=== Social Media Share Buttons And Icons | MashShare ===
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -6,19 +6,18 @@ Contributors: dearhive, deip
 Donate link: https://www.mashshare.net
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: share, share buttons, social buttons, social media, social icons
+Tags: share, social, share buttons, social icons, social media, buttons, icons
 Requires at least: 3.6+
-Tested up to: 6.3
-Stable tag: 3.8.9
+Tested up to: 6.4
+Stable tag: 4.0.42
 Requires PHP: 5.6
 
-Social Media Share Buttons for Twitter, Facebook, and other social networks. Highly customizable Social Media ecosystem
+Social media share buttons and social icons for Twitter, Facebook, and other social networks. Highly customizable social media share button ecosystem
 
 == Description ==
 
 #### MashShare - The Social Media Share Buttons Ecosystem (Twitter count supported with [Social Network Add-On](https://mashshare.net/downloads/mashshare-social-networks-addon/))
-A free Social Media Share Buttons Plugin, professional and highly customizable<br />
-ecosystem for social media sharing and optimizing your valuable content.<br />
+A free Social Media Share Buttons and icons Plugin, professional and highly customizable ecosystem for social media sharing and optimizing your valuable content.
 
 <strong>Important for EU users: MashShare is DSGVO compliant!<br />
 No IP data or any other personal data is sent to third parties or collected at all.</strong><br>
@@ -27,32 +26,32 @@ No IP data or any other personal data is sent to third parties or collected at a
 Other social share buttons are often using external scripts which are increasing loading times.
 MashShare is using NO external script dependencies. All code is loaded directly from your website and <strong>MashShare ensures your and your visitor's privacy!</strong>  <br />
 
-* <strong>New: </strong> Most Shared Posts Widget
-* <strong>New: </strong> Async share count aggregation for Share Buttons share count
-* <strong>New: </strong> Dashboard for total share buttons share count on posts screen
-* <strong>New: </strong> Short URL integration for share buttons
+* <strong>New: </strong> Most Social Shared Posts Widget
+* <strong>New: </strong> Async social share count aggregation for Share Buttons
+* <strong>New: </strong> Dashboard for total share buttons social share count on posts screen
+* <strong>New: </strong> Short URL integration for social share buttons
 * <strong>New: </strong> Support for Accelerated Mobile Pages (AMP) when using the [official WordPress AMP plugin](https://wordpress.org/plugins/amp/)
 
 <strong>Installation</strong>
 [youtube https://www.youtube.com/watch?v=vRSE-pQJTBQ]
 
-It gives you per default a large total share button counter beside three large  prominent Share Buttons for your Twitter tweets, Facebook share, and the option to place a prominent subscribe button for your news feed and mailing list.
+It gives you per default a large total social share button counter beside three large  prominent social share buttons for your Twitter tweets, Facebook social share, and the option to place a prominent subscribe button for your news feed and mailing list.
 These services are free per default including great support.
 There is no need to create an account! <br />
 
 We also offer free Add-Ons for specifying social sharing image, title, description, and Twitter hashtags and think this is satisfying for most website owners who need a free and effective working social sharing solution.<br />
 
-If you need share buttons fore Whatsapp, Pinterest, Mail,<br />
+If you need social share buttons fore Whatsapp, Pinterest, Mail,<br />
 Print, Linkedin, Odnoklassniki, etc., you get them on the Add-On Marketplace.<br />
 
-MashShare can also be used in conjunction with other third-party share buttons vendors!
+MashShare can also be used in conjunction with other third-party social share buttons vendors!
 
 Free and paid Add-Ons available for:
 
 - More Social Share Buttons<br />
 - YouTube Video Share Popup<br />
-- Share Button Responsive<br />
-- Sticky Share bar<br />
+- Social Share Button Responsive<br />
+- Sticky social share bar<br />
 - Social Sharing Optimization<br />
 - Google Analytics<br />
 - and more...<br />
@@ -66,23 +65,23 @@ This Social Media share buttons plugin in active development and will be updated
 
 = Main Features =
 
-* High-Performance Social Media Share Buttons - easy to use - Share Buttons for the most common networks
-* High-Resolution lossless vector font share button icons
+* High-Performance Social Media Share Buttons - easy to use - social share buttons for the most common networks
+* High-Resolution lossless vector font social share icons
 * Show the Total Social Media Share count at a glance
 * Object and transient caches to provide incredibly fast execution speed of Social Media Share Button Icons
 * Shortcodes
 * Extensible with many [Add-Ons](https://www.mashshare.net/downloads) (Google Analytics, More Social Networks, Responsive, YouTube Video Share and more...)
 * Developer friendly with several filters and actions.
 * Highly customizable
-* Smart (virtual) share button count function. Add virtual shares to new articles. Use psychological aspects to increase real shares.
+* Smart (virtual) social share button count function. Add virtual shares to new articles. Use psychological aspects to increase real shares.
 
 = Recent Changes and New Features: =
 
 * Social Media Share Buttons Icons with Improved performance
-* Option to disable Social Media share button count completely (no SQL queries will be generated any longer)
-* Shortcode option to disable share counts
+* Option to disable Social Media social share button count completely (no SQL queries will be generated any longer)
+* Shortcode option to disable social share counts
 * Checking if curl is working on the server
-* Option to disable share count cache for testing purposes
+* Option to disable social share count cache for testing purposes
 * Use of sharp and crisp clear font Social Media Icons instead Social Media Icons images
 * Button 'extra content' for content slider subscribe forms or any other content New: Use a link for the Subscribe button instead of the toggle dropdown
 * Complete rewrite of CSS for easier modifications
@@ -91,38 +90,40 @@ This Social Media share buttons plugin in active development and will be updated
 * Multi-language capable, *.po files
 * Change color of share counts via setting
 * Count up animation for share buttons counts (Does not work for shortcodes and on blog pages)
-* HTML5 Tag < aside > wrapped around to tell search engines that the share buttons are not part of the content
-* Plus button moves to end of share buttons when activated and does not stay longer in place.
-* Drag and drop sort order of share buttons services.
+* HTML5 Tag < aside > wrapped around to tell search engines that the social share buttons are not part of the content
+* Plus button moves to end of social share buttons when activated and does not stay longer in place.
+* Drag and drop sort order of social share buttons services.
 * Enable desired Social Media share buttons Icons with one click
 * Choose which Social Media network should be visible all the time This one will be large-sized by default. Other Social Media networks are behind the plus sign
-* Three different effective share button styles - Less is more here
+* Three different effective social share button styles - Less is more here
 * Choose border radius of the Social Media buttons
-* Keep settings when share buttons are uninstalled - optional
+* Keep settings when social share buttons are uninstalled - optional
 * Custom CSS field for the individual styling of the social media share buttons
 
 <strong> Social Media Add-Ons available for </strong>
 
-* Whatsapp (Whatsapp button is shown only on mobile devices)
-* Pinterest
-* Digg
-* Linkedin
-* Reddit
-* Vk / VKontakte
-* Print
-* Buffer
-* Weibo
-* Pocket
-* Xing
-* Tumblr
-* Mail
-* ManageWP
-* Meneame
-* Odnoklassniki
-* Frype / Draugiem
-* Skype
-* Flipboard
-* Hackernews
+* Whatsapp share button and social icon (Whatsapp button is shown only on mobile devices)
+* Pinterest share button and social icon
+* Digg share button and social icon
+* Linkedin share button and social icon
+* Reddit share button and social icon
+* Vk / VKontakte share button and social icon
+* Print share button and social icon
+* Buffer share button and social icon
+* Weibo share button and social icon
+* Pocket share button and social icon
+* Xing share button and social icon
+* Tumblr share button and social icon
+* Mail share button and social icon
+* ManageWP share button and social icon
+* Meneame share button and social icon
+* Odnoklassniki share button and social icon
+* Frype / Draugiem share button and social icon
+* Skype share button and social icon
+* Flipboard share button and social icon
+* Hackernews share button and social icon
+* Threads share button and social icon (New)
+* Mastodon share button and social icon (New)
 
 = High Performance =
 
@@ -136,48 +137,30 @@ https://www.mashshare.net/mashshare-proven-fast-benchmark/
 
 **Shortcodes**
 
-* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total share count wherever you like.
-Share Buttons will be shown exactly on the place where you copy the shortcode in your content.
+* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total social share count wherever you like.
+Social Share Buttons will be shown exactly on the place where you copy the shortcode in your content.
 
 There are more parameters available:
 
-* Embed Share Buttons in pages or posts:  `[mashshare] `
+* Embed social share Buttons in pages or posts:  `[mashshare] `
 * Buttons without sharecount: `[mashshare shares="false"]`
 * Sharecount only: `[mashshare buttons="false"]`
-* Share buttons alignment: `[mashshare shares="false" buttons="true" align="left|right"]`
+* Social share buttons alignment: `[mashshare shares="false" buttons="true" align="left|right"]`
 * Shortcode in template files via php: `echo do_shortcode('[mashshare]');`
 * Custom url:  `[mashshare url="http://www.google.de"]`
-* Custom share text: `[mashshare text="This is my custom share text"]`
+* Custom social share text: `[mashshare text="This is my custom social share text"]`
 
-* For manual insertion of the Share Buttons in your template files use the following PHP code on the place you like to see the share buttons:`echo do_shortcode('[mashshare]');`
-Configure the Share buttons sharing function in the settings page of the plugin.
+* For manual insertion of the Social Share Buttons in your template files use the following PHP code on the place you like to see the social share buttons:`echo do_shortcode('[mashshare]');`
+Configure the Social Media Share buttons sharing function in the settings page of the plugin.
 * Change the color of MashShare count with the setting option.
 
 **Full SEO third party plugin support**
 MashShare integrates with [All in One SEO Pack](http://wordpress.org/plugins/all-in-one-seo-pack/) and [WordPress SEO by Yoast](http://wordpress.org/plugins/wordpress-seo/).
 Any description and title which is defined in Yoast open graph settings will be used by MashShare Open Graph Settings
 
-** GitHub **
-Follow the development and improve MashShare.
-You find us on GitHub at https://github.com/mashshare/MashShare
-
-** Languages **
-
-MashShare has been translated into many languages:
-
-1. English
-2. German
-3. Spanish
-4. Turkish
-5. Italy
-6. Portuguese (Brazil)
-
-Please help to translate the share button plugin into more languages:
-https://translate.wordpress.org/projects/wp-plugins/mashsharer
-
 = How does it work? =
 
-MashShare makes use of public available API endpoints that are delivered by social networks. It periodically checks for the total count of all your Facebook and Twitter shares and cumulates them. It then shows the total number beside the Share and Social Media Icons.
+MashShare makes use of public available API endpoints that are delivered by social networks. It periodically checks for the total count of all your Facebook and Twitter shares and cumulates them. It then shows the total number beside the social share and Social Media Icons.
 No need to embed dozens of external slow loading scripts into your website.
 
 
@@ -191,28 +174,28 @@ After installation go to the settings page Settings->MashShare and make your cha
 > Find here the Frequently Asked Questions. Also, look into our docs which is often more up to date:
 http://docs.mashshare.net/
 
-<h4>There are no social share buttons visible after updating or installing MashShare</h4>
-This happens sometimes when you are using the MashShare Network Add-On which is disabled during the update process or when you are updating from a very early MashShare version 1.x.
+<h4>There are no social media share buttons visible after updating or installing MashShare</h4>
+Share buttons are not visible sometimes when you are using the MashShare Network Add-On which is disabled during the update process or when you are updating from a very early MashShare version 1.x.
 Solution: Disable MashShare Social Media Network Add-On and MashShare Core plugin. Enable first MashShare THAN the Social Media Network Add-On and all Social Media Share buttons to become visible again. (Activating order is important here)
 
-<h4>Why is the Social Media total count not shown immediately after sharing?</h4>
-It takes some time for the script to detect the sharing. So wait a few minutes then you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
-So when you set the plugin to 5minutes caching time. You have to wait at least for 5minutes until the click count is shown.
+<h4>Why is the Social Media share count not shown immediately after sharing?</h4>
+It takes some time for the script to detect the total social share count. So wait a few minutes then you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
+So when you set the plugin to 5 minutes caching time. You have to wait at least for 5 minutes until the social share click count is shown.
 
-<h4>Do I need a MashShare account?</h4>
-There is no account needed. All code resides on your website and there is no account or any monthly fee necessary to use MashShare.
+<h4>Do I need a MashShare account to use the social share buttons?</h4>
+There is no account needed in Mashshare but you need social media accounts to share. All code resides on your website and there is no account or any monthly fee necessary to use MashShare.
 
 <h4>Does this plugin sends any personal user data to you or Facebook, Twitter, etc.?</h4>
 
 No, there is no personal data send to Facebook, Twitter, Google, and other services. No data goes to MashShare that includes any IP or other data without your explicit grant.
-The big advantage of using Mashable Share buttons is the independence in comparison to other plugins which creates steady connections to Facebook and Co.
+The big advantage of using Mashable social share buttons is the independence in comparison to other plugins which creates steady connections to Facebook and Co.
 So there is no IP based data send to the social networks or shared count.
 
 <h4>Do I have to do manual changes in Javascript or HTML Code?</h4>
 There is no need for you to make any manual changes. The plugin does everything for you. But if you are an experienced web-developer you are free to use the PHP function mashsharer(); in your templates.
 
 <h4>Is there a shortcode for pages and posts?</h4>
-Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
+Use the shortcode [mashshare] to embed the social share Buttons in pages or posts.
 
 <h4>Why is Facebook sharing only the URL and not the title and description of my page?</h4>
 You need to enable the open graph settings or install a plugin like Yoast which injects open graph tags into your site
@@ -222,27 +205,32 @@ Read here more about this: http://docs.mashshare.net/article/10-facebook-is-show
 * https://www.mashshare.net
 
 == Installation ==
-1. Download the share button plugin "MashShare", unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
+1. Download the social share button plugin "MashShare", unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Select Plugins->MashShare
 
 == Screenshots ==
 
 1. Subscribe form with Social Media Facebook share button and mail subscribe
-2. Default share buttons with separate available responsive Add-On
-3. Sortable Total Share Dashboard
-4. Default Share buttons with separate available responsive Add-On
+2. Default social share buttons with separate available responsive Add-On
+3. Sortable total social share dashboard
+4. Default social share buttons with separate available responsive Add-On
 5. Responsive Design + Social-Networks (separate Add-Ons)
-6. Default Share buttons + Subscribe Button opened (included)
+6. Default social share buttons + Subscribe Button opened (included)
 7. Social Media Settings on the post edit screen
 8. Sticky Sharebar Add-On on a desktop device
 9. Circle style (included)
-11. Default share buttons (included)
+11. Default social share buttons (included)
 12. Custom Social Sharing descriptions with free MashShare Open Graph Add-On
 13. Extend MashShare with great Add-Ons
 
 
 == Changelog ==
+
+= 4.0.42 =
+Fixed: Twitter icon updated
+Fixed: PHP 8.2 compatibility
+Fixed: Wordpress 6.4 compatibility
 
 = 3.8.9 - 02.06.2023 =
 Fixed: Escaping bug show Pinterest blank page ( [#153](https://github.com/WPChill/MashShare/issues/153) )
@@ -278,7 +266,7 @@ Changed: Removed support for social networks that don't exist anymore ( [#148](h
 = 3.8.1 =
 * New: Compatible up to WordPress 5.9
 * Fix: Make MashShare compatible with PHP 8.x
-* Fix: Don't request share count for preview pages. This fixes an artificially high share count on initial post creation
+* Fix: Don't request social share count for preview pages. This fixes an artificially high social share count on initial post creation
 
 = 3.8.0 =
 * New: Compatible up to WordPress 5.8
@@ -302,7 +290,7 @@ Changed: Removed support for social networks that don't exist anymore ( [#148](h
 
 = 3.7.4 =
 * New: Supports up to WordPress 5.4
-* Fix: Share count not collected for all pages on large sites with huge traffic if caching plugins are used
+* Fix: Social share count not collected for all pages on large sites with huge traffic if caching plugins are used
 
 = 3.7.3 =
 * New: Support for WhatsApp web.  Social network add-on needed https://mashshare.net/downloads/mashshare-social-networks-addon/
@@ -316,11 +304,11 @@ Changed: Removed support for social networks that don't exist anymore ( [#148](h
 
 = 3.7.0 =
 * Fix: PHP Warning: Invalid argument supplied for foreach() in meta-box.php
-* Fix: Set the share count query rate limit to 1req/5min
+* Fix: Set the social share count query rate limit to 1req/5min
 * New: Compatible up to WordPress 5.2.4
 
 = 3.6.8 =
-* New: Add new filter mashsb_allowed_post_types for allowing or disabling share counts on particular posts types to lower the API requests to sharedcount.com
+* New: Add new filter mashsb_allowed_post_types for allowing or disabling social share counts on particular posts types to lower the API requests to sharedcount.com
 * Tweak: sharedcount.com lowered their free API limit to 500 daily requests. Change description in MashShare!
 * Fix: Changed register link for sharedcount.com
 * Fix: PHP Warning: Invalid argument supplied for foreach() in meta-box.php
@@ -332,7 +320,7 @@ Changed: Removed support for social networks that don't exist anymore ( [#148](h
 * Tweak: Added an extra check for HTTP_HOST to make it more compliant with cron jobs and/or API workers
 
 = 3.6.5 =
-* Fix: Share count not collected with an async caching method
+* Fix: social share count not collected with an async caching method
 
 = 3.6.5 =
 * New: Compatible up to WordPress 5.2

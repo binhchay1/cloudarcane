@@ -15,7 +15,7 @@ if( !defined( 'ABSPATH' ) )
 
 /**
  * Check if at least one social network is enabled
- * 
+ *
  * @global array $mashsb_options
  * @return boolean false when no network is enabled
  */
@@ -46,7 +46,7 @@ function mashsb_admin_messages() {
     if( !current_user_can( 'update_plugins' ) ){
         return;
     }
-    
+
     mashsb_show_update_notice_gdpr();
 
     // Cache warning
@@ -68,26 +68,26 @@ function mashsb_admin_messages() {
         echo '</div>';
     }
 
-    // notice no Networks enabled    
+    // notice no Networks enabled
     if( mashsb_is_admin_page() && !mashsb_check_active_networks() ) {
         echo '<div class="error">';
         echo '<p>' . wp_kses_post(sprintf( __( 'No Social Networks enabled. Go to <a href="%s"> Mashshare->Settings->Social Networks</a> and enable at least one Social Network.', 'mashsb' ), admin_url( 'admin.php?page=mashsb-settings&tab=networks#mashsb_settingsservices_header' ) )) . '</p>';
         echo '</div>';
     }
-    // Share bar add-on notice    
-    if( mashsb_is_admin_page() && mashsb_incorrect_sharebar_version() ) { 
+    // Share bar add-on notice
+    if( mashsb_is_admin_page() && mashsb_incorrect_sharebar_version() ) {
         echo '<div class="error">';
         echo '<p>' . wp_kses_post(sprintf( __( 'Your Sharebar Add-On version is not using new short url mechanism of MashShare 3.X. Please <a href="%s" target="blank"> update the Sharebar Add-On</a> to at least version 1.2.5. if you want to make sure that twitter short urls will not stop working in one of the next updates. This requires a valid license of the Sharebar Add-On', 'mashsb' ), 'https://www.mashshare.net/downloads/sticky-sharebar/?utm_source=insideplugin&utm_medium=userwebsite&utm_content=update_sharebar&utm_campaign=freeplugin' )) . '</p>';
         echo '</div>';
     }
-    // Floating Sidebar add-on notice    
+    // Floating Sidebar add-on notice
     if( mashsb_is_admin_page() && mashsb_incorrect_sidebar_version() ) {
         echo '<div class="error">';
         echo '<p>' . wp_kses_post(sprintf( __( 'Your Floating Sidebar Add-On version is not using new short url mechanism of MashShare 3.X. Please <a href="%s" target="blank"> update the Floating Sidebar Add-On</a> to at least version 1.2.6. if you want to make sure that twitter short urls will not stop working in one of the next updates. This requires a valid license of the Floating Sidebar Add-On', 'mashsb' ), 'https://www.mashshare.net/downloads/floating-sidebar/?utm_source=insideplugin&utm_medium=userwebsite&utm_content=update_sharebar&utm_campaign=freeplugin' ) ). '</p>';
         echo '</div>';
     }
 
-    // Check Bitly API key  
+    // Check Bitly API key
     if( mashsb_is_admin_page() && (false === mashsb_check_bitly_apikey() && isset( $mashsb_options['mashsu_methods'] ) && $mashsb_options['mashsu_methods'] === 'bitly' ) ) {
         echo '<div class="error">';
         echo '<p>' . wp_kses_post(sprintf( __( 'Bitly Access Token is invalid or bitly.com endpoint can not be reached. Go to <a href="%s"><i>Mashshare->Settings->Short URL Integration</i></a> and check the Bitly API key.', 'mashsb' ), admin_url( 'admin.php?page=mashsb-settings#mashsb_settingsshorturl_header' ) )) . '</p>';
@@ -111,7 +111,7 @@ function mashsb_admin_messages() {
         echo '<p>' . wp_kses_post(sprintf( __( '<strong>No Share Count aggregation possible!</strong> <a href="%s">Permalinks</a> must be enabled to count shares. Share count is deactivated until you have changed this.', 'mashsb' ), admin_url( 'options-permalink.php' ) )) . '</p>';
         echo '</div>';
     }
-    
+
     // Show save notice
     if( isset( $_GET['mashsb-message'] ) ) {
         switch ( $_GET['mashsb-message'] ) {
@@ -131,10 +131,12 @@ function mashsb_admin_messages() {
     $datetime2 = new DateTime( $display_date );
     $diff_intrval = round( ($datetime2->format( 'U' ) - $datetime1->format( 'U' )) / (60 * 60 * 24) );
     if( $diff_intrval >= 7 && get_option( 'mashsb_RatingDiv' ) == "no" ) {
-        echo '<div class="mashsb_fivestar update-nag" style="box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);">
-    	<p>Awesome, you\'ve been using <strong>Mashshare Social Sharing Plugin</strong> for more than 1 week. <br> May i ask you to give it a <strong>5-star rating</strong> on Wordpress? </br>
+        echo '<div class="mashsb_fivestar update-nag card">
+        <h2>MashShare Review</h2>
+        <button type="button" class="mashsbHideRating notice-dismiss" title="Close"></button>
+    	<p>Awesome, you\'ve been using <strong>Mashshare Social Sharing Plugin</strong> for more than 1 week. <br> May we ask you to give it a <strong>5-star rating</strong> on Wordpress? </br>
         This will help to spread its popularity and to make this plugin a better one.
-        <br><br>Your help is much appreciated. Thank you very much,<br> ~René Hermenau
+        <br><br>Your help is much appreciated. Thank you very much,<br> ~DearHive Team
         <ul>
             <li class="float:left"><a href="https://wordpress.org/support/plugin/mashsharer/reviews/?filter=5#new-post" class="thankyou button button-primary" target="_new" title=Yes, MashShare Increased My Shares" style="color: #ffffff;-webkit-box-shadow: 0 1px 0 #256e34;box-shadow: 0 1px 0 #256e34;font-weight: normal;float:left;margin-right:10px;">I Like MashShare - It Increased My Shares</a></li>
             <li><a href="javascript:void(0);" class="mashsbHideRating button" title="I already did" style="">I already rated it</a></li>
@@ -171,7 +173,7 @@ add_action( 'admin_notices', 'mashsb_admin_messages' );
 
 /**
  * Check if sharebar add-on version is fully supported
- * 
+ *
  * @return boolean true if incorrect
  */
 function mashsb_incorrect_sharebar_version() {
@@ -183,7 +185,7 @@ function mashsb_incorrect_sharebar_version() {
 }
 /**
  * Check if sharebar add-on version is fully supported
- * 
+ *
  * @return boolean true if incorrect
  */
 function mashsb_incorrect_sidebar_version() {
@@ -195,14 +197,14 @@ function mashsb_incorrect_sidebar_version() {
 }
 
 /* Hide the update notice div
- * 
+ *
  * @subpackage  Admin/Notices
  * @copyright   Copyright (c) 2015, René Hermenau
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       2.4.0
- * 
+ *
  * @return json string
- * 
+ *
  */
 
 function mashsb_hide_update_notice() {
@@ -222,14 +224,14 @@ function mashsb_hide_update_notice() {
 add_action( 'wp_ajax_mashsb_hide_notice', 'mashsb_hide_update_notice' );
 
 /* Hide the rating div
- * 
+ *
  * @subpackage  Admin/Notices
  * @copyright   Copyright (c) 2014, René Hermenau
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       2.2.3
- * 
+ *
  * @return json string
- * 
+ *
  */
 
 function mashsb_HideRatingDiv() {
@@ -274,7 +276,7 @@ add_action( 'mashsb_dismiss_notices', 'mashsb_dismiss_notices' );
  * Show big colored update information below the official update notification in /wp-admin/plugins
  * @since 2.0.8
  * @return void
- * 
+ *
  */
 
 function mashsb_in_plugin_update_message( $args ) {
@@ -325,7 +327,7 @@ function mashsbGetRemainingRateLimitTime() {
 
     if( false !== $trans_time ) {
         $rest = abs(time() - $trans_time);
-        
+
         if ($rest < 60){
             return $rest . ' seconds.';
         } else {
@@ -343,18 +345,18 @@ function mashsbGetRemainingRateLimitTime() {
  */
 function mashsb_is_invalid_fb_api_key(){
     global $mashsb_options;
-    
+
     if (empty($mashsb_options['fb_access_token_new'])){
         return false;
     }
-    
+
     $status = get_option('mashsb_valid_fb_api_key');
     if (false === $status || 'success' === $status){
         return false;
     } else {
         return $status;
     }
-} 
+}
 
 
 /**
@@ -362,20 +364,21 @@ function mashsb_is_invalid_fb_api_key(){
  * @since 3.5.3.0
  */
 function mashsb_show_update_notice_gdpr() {
-    
-    $message = sprintf(__( '<h2 style="color:white;">MashShare GDPR Compliance</h2>'
-            . 'MashShare uses sharedcount.com to collect shares and to be GDPR compliant. <br>Activate sharedcount.com here: <a href="'.admin_url().'admin.php?page=mashsb-settings#mashsb_settingsgeneral_header" style="color:white;">MashShare > Settings > General > Share Count</a><br><br>For collecting Twitter shares get the <a href="https://mashshare.net/downloads/mashshare-social-networks-addon/?utm_source=wp-admin&utm_medium=gdpr-notice&utm_campaign=gdpr-notice" target="_blank" style="color:white;text-decoration:underline;">Social Network Add-On</a>'
-            , 'mashsb' ), 
+
+    $message = sprintf(__( '<h2>MashShare GDPR Compliance</h2>'
+        . 'MashShare uses sharedcount.com to collect shares and to be GDPR compliant.'
+        .'<br>Activate sharedcount.com here: <a href="'.admin_url().'admin.php?page=mashsb-settings#mashsb_settingsgeneral_header">MashShare > Settings > General > Share Count</a><br><br>For collecting Twitter shares get the <a href="https://mashshare.net/downloads/mashshare-social-networks-addon/?utm_source=wp-admin&utm_medium=gdpr-notice&utm_campaign=gdpr-notice" target="_blank" style="text-decoration:underline;">Social Network Add-On</a>'
+            , 'mashsb' ),
             admin_url() . 'admin.php?page=mashsb-settings'
             );
-      
+
         if( get_option( 'mashsb_show_update_notice_gdpr1' ) === 'no' ) {
            return false;
         }
-  
+
         // admin notice after updating Mashshare
-        $html = '<div class="mashsb-notice-gdpr mashsb_update_notice_gdpr update-nag" style="background-color: #00abed;color: white;padding: 20px;margin-top: 20px;border: 3px solid white;width:80%;">' . $message .
-        '<p><a href="'.admin_url().'admin.php?page=mashsb-settings&mashsb-action=hide_gdpr_notice" class="mashsb_hide_gdpr" title="I got it" style="text-decoration:none;color:white;text-decoration:none;">I understand! Close this message</a></a>'.
+        $html = '<div class="mashsb-notice-gdpr mashsb_update_notice_gdpr update-nag card"> <button type="button" class="mashsb_hide_gdpr notice-dismiss" title="Close"></button>' . $message .
+        '<p><a href="'.admin_url().'admin.php?page=mashsb-settings&mashsb-action=hide_gdpr_notice" class="mashsb_hide_gdpr" title="I got it" style="text-decoration:none;">I understand! Close this message</a></a>'.
             '</div>';
 
 		echo wp_kses_post($html);
@@ -383,7 +386,7 @@ function mashsb_show_update_notice_gdpr() {
 
 /**
  * Hide GDPR notice
- * 
+ *
  * @global array $mashsb_options
  */
 function mashsb_hide_gdpr_notice(){
@@ -394,7 +397,7 @@ add_action ('mashsb_hide_gdpr_notice', 'mashsb_hide_gdpr_notice');
 
 /**
  * Hide FB API notice
- * 
+ *
  * @global array $mashsb_options
  */
 function mashsb_hide_fb_api_notice(){
